@@ -12,7 +12,7 @@ import {
     CONTACT_US,
 } from "./RoutesConstants";
 
-import About from "../pages/PublicPages/About/About";
+import About from "../pages/About/About";
 import AssetProtection from '../pages/AssetProtection/AssetProtection.jsx'
 import BankingLicense from '../pages/Services/BankingLicense/BankingLicense.jsx'
 import CompanyFormation from '../pages/Services/CompanyFormation/CompanyFormation.jsx'
@@ -22,7 +22,7 @@ import Comoros from '../pages/Regions/Comoros/Comoros.jsx'
 import StLucia from '../pages/Regions/StLucia/StLucia.jsx'
 import StVincent from '../pages/Regions/StVincent/StVincent.jsx'
 import WesternSahara from '../pages/Regions/WesternSahara/WesternSahara.jsx'
-import Contacts from "../pages/PublicPages/Contacts/Contacts";
+import Contacts from "../pages/Contacts/Contacts";
 
 export const publicRoutes = [
     {
@@ -42,40 +42,48 @@ export const publicRoutes = [
     },
 ]
 
-export const ServicesPublicRoutes = [
+export const servicesPublicRoutes = [
     {
+        name: 'Company Formation',
         path: COMPANY_FORMATION,
         element: <CompanyFormation />
     },
     {
+        name: 'Banking license',
+        path: BANKING_LICENSE,
+        element: <BankingLicense />
+    },
+    {
+        name: 'Gaming & gambling license',
         path: GAMING_LICENSE,
         element: <GamingLicense />
     },
     {
+        name: 'Residency & passport',
         path: RESIDENCE_PASSPORT,
         element: <ResidencePassport />
     },
-    {
-        path: BANKING_LICENSE,
-        element: <BankingLicense />
-    },
 ]
 
-export const RegionsPublicRoutes = [
+export const regionsPublicRoutes = [
     {
-        path: COMOROS,
-        element: <Comoros />
+        name: 'Western Sahara',
+        path: WESTERN_SAHARA,
+        element: <WesternSahara/>
     },
     {
+        name: 'St. Lucia',
         path: ST_LUCIA,
         element: <StLucia />
     },
     {
+        name: 'St. Vincent & the Grenadines',
         path: ST_VINCENT,
         element: <StVincent />
     },
     {
-        path: WESTERN_SAHARA,
-        element: <WesternSahara/>
+        name: 'Comoros',
+        path: COMOROS,
+        element: <Comoros />
     },
 ]

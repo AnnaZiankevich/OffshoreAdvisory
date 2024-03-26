@@ -20,7 +20,7 @@ const Header = () => {
                     <HeaderDropdown title={'Our services'} links={servicesPublicRoutes} />
                     <HeaderDropdown title={'Regions'} links={regionsPublicRoutes} />
                     <Link className={style.header_link} to={ASSEST_PROTECTION}>Asset Protection</Link>
-                    <Link className={style.header_link} to={CONTACT_US}>Contac Us</Link>
+                    <Link className={style.header_link} to={CONTACT_US}>Contact Us</Link>
                 </div>
             </header>
         </>

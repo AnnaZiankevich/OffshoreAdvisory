@@ -1,0 +1,18 @@
+@use '../../../styles/colors' as c;
+@use '../../../styles/mixins' as m;
+
+.blue_button {
+    @include m.buttonStyle(c.$white, c.$accentBlue);
+
+    &:hover {
+        @include m.buttonStyle(c.$white, c.$lightBlue);
+    }
+}
+
+.white_button {
+    @include m.buttonStyle(c.$accentBlue, c.$white);
+
+    &:hover {
+        @include m.buttonStyle(c.$white, c.$lightPurple);
+    }
+}

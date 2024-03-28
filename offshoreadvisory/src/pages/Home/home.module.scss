@@ -1,0 +1,8 @@
+@use '../../styles/colors' as c;
+@use '../../styles/mixins' as m;
+
+.home_block {
+    width: 100vw;
+    height: 100vh;
+    background-color: c.$accentBlue;
+}

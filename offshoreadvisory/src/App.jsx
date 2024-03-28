@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { publicRoutes, servicesPublicRoutes, regionsPublicRoutes } from "./Constants/PublicRoutes";
 import Home from "../src/pages/Home/Home"
 import Header from '../src/components/Header/Header'
+import Footer from './components/Footer/Footer'
 import './styles/_main.scss';
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         }
 
       </Routes>
+
+      <Footer />
 
     </div>
   );

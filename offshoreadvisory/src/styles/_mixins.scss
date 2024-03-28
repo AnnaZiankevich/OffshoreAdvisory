@@ -46,3 +46,20 @@ $letter-spacing: -4%;
     line-height: 16px;
 }
 
+@mixin buttonStyle($color, $backgroundColor) {
+    @include text2();
+
+    display: flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 120px;
+    border: none;
+    outline: none;
+
+    color: $color;
+    background-color: $backgroundColor;
+
+    cursor: pointer;
+}
+

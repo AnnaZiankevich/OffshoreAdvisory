@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import style from './header.module.scss'
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import logo from "../../assets/img/logo.svg"
 import HeaderDropdown from "../HeaderDropdown/HeaderDropdown";
 import { ABOUT, ASSEST_PROTECTION, CONTACT_US } from "../../Constants/RoutesConstants";

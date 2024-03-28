@@ -1,10 +1,10 @@
 import s from './App.module.css';
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { publicRoutes, servicesPublicRoutes, regionsPublicRoutes } from "./Constants/PublicRoutes";
-import Home from "../src/pages/Home/Home"
+import { Route, Routes } from "react-router-dom"
+import { publicRoutes, servicesPublicRoutes, regionsPublicRoutes } from "./Constants/PublicRoutes"
+import Home from './pages/Home/Home'
 import Header from '../src/components/Header/Header'
 import Footer from './components/Footer/Footer'
-import './styles/_main.scss';
+import './styles/_main.scss'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
 
       <Routes>
 
-        <Route path={'/'} element={ Home }/>
+        <Route path={'/'} element={<Home/>}/>
 
         {
             publicRoutes.map(route => {

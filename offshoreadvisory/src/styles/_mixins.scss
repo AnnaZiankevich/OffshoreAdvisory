@@ -61,5 +61,11 @@ $letter-spacing: -4%;
     background-color: $backgroundColor;
 
     cursor: pointer;
+    transition: .3s all ease;
+}
+
+@mixin block() {
+    width: 100vw;
+    height: 100%;
 }
 

@@ -1,0 +1,48 @@
+@import "fonts";
+
+$family-dmsans-regular: "DMSans-Regular";
+$letter-spacing: -4%;
+
+@mixin typography() {
+    font-family: $family-dmsans-regular;
+    letter-spacing: $letter-spacing;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin text1() {
+    @include typography();
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+@mixin text2() {
+    @include typography();
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+@mixin text3() {
+    @include typography();
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+@mixin text4() {
+    @include typography();
+
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+

@@ -15,12 +15,14 @@ const Header = () => {
                     <Link className={style.header_link} to="/">
                         <img src={logo} alt="" className={"logo"} width={235} height={42}/>
                     </Link>
-                    <Link className={style.header_link} to="/">Main</Link>
-                    <Link className={style.header_link} to={ABOUT}>About Us</Link>
-                    <HeaderDropdown title={'Our services'} links={servicesPublicRoutes} />
-                    <HeaderDropdown title={'Regions'} links={regionsPublicRoutes} />
-                    <Link className={style.header_link} to={ASSEST_PROTECTION}>Asset Protection</Link>
-                    <Link className={style.header_link} to={CONTACT_US}>Contact Us</Link>
+                    <div className={style.content}>
+                        <Link className={style.header_link} to="/">Main</Link>
+                        <Link className={style.header_link} to={ABOUT}>About Us</Link>
+                        <HeaderDropdown title={'Our services'} links={servicesPublicRoutes} />
+                        <HeaderDropdown title={'Regions'} links={regionsPublicRoutes} />
+                        <Link className={style.header_link} to={ASSEST_PROTECTION}>Asset Protection</Link>
+                        <Link className={style.header_link} to={CONTACT_US}>Contact Us</Link>
+                    </div>
                 </div>
             </header>
         </>

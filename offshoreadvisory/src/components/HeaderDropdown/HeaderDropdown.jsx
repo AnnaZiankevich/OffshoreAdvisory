@@ -10,12 +10,13 @@ const HeaderDropdown = ({title, links}) => {
 
     return (
         <div className={s.dropdown_wrapper}
-             onMouseEnter={() => setIsDropdownOpen(true)}
+             onClick={() => setIsDropdownOpen(prev => !prev)}
         >
-            <div className={s.title}>
-                {title} <img src={arrow_dropdown} alt=""/>
+            <div className={isDropdownOpen ? s.title_opened : s.title}>
+                <div>{title}</div>
+                <img src={arrow_dropdown} alt=""/>
             </div>
-            <div className={isDropdownOpen ? s.dropdown_content : s.hidden} onMouseLeave={() => setIsDropdownOpen(false)}>
+            <div className={isDropdownOpen ? s.dropdown_content : s.hidden} >
                 {
                     links.map((route) => {
                         return (

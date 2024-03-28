@@ -1,0 +1,75 @@
+@use '../../styles/colors' as c;
+@use '../../styles/mixins' as m;
+
+.dropdown_wrapper {
+    position: relative;
+}
+
+.dropdown_content {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    right: 0;
+    background: c.$white;
+    padding: 16px 48px;
+    margin: 0 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    border-radius: 6px;
+    background-color: c.$white;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: .5s all ease;
+    @include m.text3();
+    color: c.$accentBlue;
+
+    img {
+        transition: .5s all ease;
+    }
+}
+
+.title:hover {
+    color: c.$lightBlue;
+
+    img {
+        transition: .5s all ease;
+        filter: invert(43%) sepia(6%) saturate(8760%) hue-rotate(-45deg) brightness(244%) contrast(79%);
+    }
+}
+
+.title_opened {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: .5s all ease;
+    @include m.text3();
+    color: c.$lightBlue;
+}
+
+.title_opened img {
+    transition: .5s all ease;
+    transform: rotate(180deg);
+    filter: invert(43%) sepia(6%) saturate(8760%) hue-rotate(-45deg) brightness(244%) contrast(79%);
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown_link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    @include m.text4();
+    color: c.$accentBlue;
+}
+

@@ -8,12 +8,12 @@ import './styles/_main.scss';
 function App() {
   return (
     <div className="App">
-
       <div className={s.desktop_header}>
         <Header/>
       </div>
 
       <Routes>
+
         <Route path={'/'} element={ Home }/>
 
         {

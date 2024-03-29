@@ -6,35 +6,10 @@ import { CONTACT_US } from '../../Constants/RoutesConstants'
 import { startPageWhy, startPageServices, startPageHow } from '../../Constants/StaticData'
 import Button from '../../components/UI/ButtonContact/ButtonContact'
 import ScrollMagic from 'scrollmagic';
-// import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import gsap from 'gsap';
 
 const Home = () => {
 
-    useEffect(() => {
-        const controller = new ScrollMagic.Controller();
-    
-        // Создаем сцену для заголовка
-        new ScrollMagic.Scene({
-          triggerElement: '#header',
-          triggerHook: 'onLeave',
-          duration: '100%',
-        })
-          .setPin('#header')
-          .addTo(controller);
-    
-        // Создаем сцены для секций
-        const sections = document.querySelectorAll('#item');
-        sections.forEach((section) => {
-          new ScrollMagic.Scene({
-            triggerElement: section,
-            triggerHook: 'onEnter',
-            duration: '100%',
-          })
-            .setTween(gsap.from(section, { opacity: 0, y: 50 }))
-            .addTo(controller);
-        });
-      }, []);
     return (
         <>
             <div className={style.home}>

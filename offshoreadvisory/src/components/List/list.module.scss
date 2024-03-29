@@ -1,0 +1,63 @@
+@use '../../styles/colors' as c;
+@use '../../styles/mixins' as m;
+
+.list {
+    display: flex;
+    gap: 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: c.$ultraDarkBlue;
+    padding: 160px 64px;
+
+    .list__title {
+        color: c.$white;
+        width: 60%;
+
+        span {
+            color: c.$darkBlue;
+        }
+    }
+
+    .list__content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .list__info {
+            display: flex;
+            width: 644px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 48px;
+
+            .list__item {
+                display: flex;
+                padding-top: 32px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+                align-self: stretch;
+                border-top: 1px solid c.$darkBlue;
+
+                h3 {
+                    color: c.$white;
+                }
+
+                p {
+                    @include m.text3();
+
+                    color: c.$lightPurple;
+                    width: 481px;
+                }
+            }
+
+            & > :nth-child(1) {
+                border-top: none;
+            }
+        }
+    }
+}

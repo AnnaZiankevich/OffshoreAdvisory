@@ -52,3 +52,22 @@ export const startPageHow = [
     },
 ]
 
+export const bankingLicense = [
+    {
+        title: 'Western Sahara',
+        text: 'Despite its unique status, Western Sahara offers opportunities for banking license acquisition with its favorable regulatory framework and strategic location.',
+    },
+    {
+        title: 'St. Lucia',
+        text: 'Saint Lucia boasts a stable economy and supportive regulatory environment, making it an attractive jurisdiction for establishing offshore banks.',
+    },
+    {
+        title: 'St. Vincent & the Grenadines',
+        text: 'With its robust financial services sector and business-friendly policies, Saint Vincent and the Grenadines provides an ideal setting for banking license acquisition.',
+    },
+    {
+        title: 'Comoros',
+        text: 'Comoros, situated in the Indian Ocean, offers a conducive environment for offshore banking operations, with simplified licensing procedures and attractive incentives.',
+    },
+]
+

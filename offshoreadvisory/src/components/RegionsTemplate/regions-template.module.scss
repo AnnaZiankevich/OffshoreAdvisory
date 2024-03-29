@@ -1,0 +1,165 @@
+@use '../../styles/colors' as c;
+@use '../../styles/mixins' as m;
+
+.region {
+
+    .region__start {
+        display: inline-flex;
+        padding: 416px 0px 88px 12px;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+
+        h2 {
+            color: c.$white;
+            width: 895px;
+        }
+    }
+
+    .region__desc {
+        background-color: c.$ultraLightGrey;
+        padding: 160px 12px 0 12px;
+
+        .region__descBody {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding-bottom: 120px;
+            border-bottom: 1.5px solid c.$lightGrey;
+
+            p {
+                @include m.text1();
+
+                color: c.$lightPurple;
+                width: 60%;
+            }
+
+            h3 {
+                color: c.$lightBlue;
+                width: 60%;
+            }
+        }
+    }
+
+    .region__services {
+        padding: 120px 64px 136px 64px;
+        background-color: c.$ultraLightGrey;
+
+        .region__servBody {
+            display: flex;
+            flex-direction: column;
+            gap: 96px;
+
+            p {
+                @include m.text1();
+
+                color: c.$lightBlue;
+                width: 499px;
+                display: flex;
+                align-self: flex-end;
+            }
+
+            .region__servContent {
+                display: flex;
+                flex-direction: column;
+                gap: 64px;
+
+                .region__servItemLeft {
+                    display: grid;
+                    // grid-auto-flow: row;
+                    direction: rtl;
+                    grid-auto-flow: dense;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 12px;
+                    height: 500px;
+
+                    & > * {
+                        direction: ltr;
+                      }
+                }
+
+                .region__servItemRight {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 12px;
+                    height: 500px;
+                }
+            }
+        }
+    }
+
+    .region__benefits {
+        background-color: c.$ultraDarkBlue;
+        display: inline-flex;
+        padding: 160px 66px 160px 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 80px;
+        width: 100%;
+        color: c.$white;
+
+        .region__benefitsTitle {
+            @include m.text1();
+            margin-left: 372px;
+        }
+
+        .region__benefitsCards {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            align-items: flex-start;
+            gap: 12px;
+
+            &::-webkit-scrollbar {
+                display: none;
+              }
+
+            & > :nth-child(1) {
+                margin-left: 372px;
+            }
+
+            .region__benefitsCard {
+                flex: 0 0 auto;
+                padding: 48px 37px 48px 32px;
+                width: 360px;
+                height: 504px;
+                background-color: c.$accentBlue;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-radius: 8px;
+                cursor: pointer;
+
+                p {
+                    @include m.text3();
+                }
+            }
+        }
+    }
+}
+
+.region__servImg {
+    border-radius: 8px;
+    height: 100%;
+}
+
+.region__servInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 159px 48px 24px;
+    align-items: start!important;
+    justify-content: space-between;
+    border-radius: 8px;
+    background: c.$white;
+    color: c.$accentBlue;
+
+    p {
+        @include m.text1();
+
+        color: c.$accentBlue!important;
+        align-self: flex-start!important;
+        width: 80%!important;
+    }
+}

@@ -88,7 +88,6 @@ const Home = () => {
                         <Button color='blue' />
                     </div>
                 </div>
-
             </div>
         </>
 

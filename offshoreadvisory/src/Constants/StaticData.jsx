@@ -71,3 +71,65 @@ export const bankingLicense = [
     },
 ]
 
+export const servTitles = [
+    'Banking Licenses',
+    'Insurance Licenses',
+    'IBC Formation',
+    'Brokerage Licenses',
+    'Trust Licenses',
+]
+
+export const westernSaharaInfo = [
+    {
+        image: 'sahara'
+    },
+    {
+        title: 'Welcome to Western Sahara: Your Gateway to Strategic Business Licensing'
+    },
+    {
+        descTitle: 'Establishing Excellence in Offshore Services'
+    },
+    {
+        descText: 'Western Sahara, strategically located at the crossroads of Africa and Europe, has emerged as a prominent hub for offshore services. Governed by the Central Reserve Authority, the jurisdiction has cultivated a business-friendly environment with a robust legal framework.'
+    },
+    {
+        servicesDesc: "At Offshore Advisory, we specialize in navigating the intricacies of Western Sahara's regulatory landscape. Our services include:"
+    },
+    {
+        services: [
+            "Seamlessly obtain licenses to operate banking services in Western Sahara, leveraging the jurisdiction's financial stability and regulatory support.",
+            'Safeguard your ventures with comprehensive insurance coverage. We facilitate the acquisition of insurance licenses for businesses operating in Western Sahara.',
+            'Streamline your global business structure with our International Business Company formation services, ensuring a robust presence in Western Sahara.',
+            'Gain regulatory approvals for your financial brokerage operations, positioning your business for success in the dynamic financial markets.',
+            'Establish and operate trusts with ease. Our services enable businesses to acquire trust licenses, ensuring asset protection and management.',
+        ]
+    },
+    {
+        benefitstitle: 'Western Sahara'
+    },
+    {
+        benefits: [
+            {
+                title: 'Regulatory Advantages',
+                description: 'The regulatory landscape of Western Sahara is designed to accommodate international businesses, providing a secure and compliant platform for financial operations.',
+            },
+            {
+                title: 'Tax Efficiency',
+                description: 'Enjoy favorable tax structures that enhance financial efficiency and profitability, making Western Sahara an attractive choice for businesses seeking tax optimization.',
+            },
+            {
+                title: 'Global Accessibility',
+                description: 'Positioned strategically, Western Sahara serves as a gateway to both African and European markets, facilitating international business expansion.',
+            },
+            {
+                title: 'Legal Stability',
+                description: 'Benefit from a stable legal environment, ensuring a secure foundation for your business operations and financial transactions.',
+            },
+            {
+                title: 'Diverse Licensing Options',
+                description: 'Western Sahara offers a range of licenses, including banking, brokerage, IBC, insurance, and trust licenses, providing businesses with versatile solutions to meet their specific needs.',
+            },
+        ]
+    }
+]
+

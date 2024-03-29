@@ -1,0 +1,45 @@
+@use '../../styles/colors' as c;
+@use '../../styles/mixins' as m;
+
+.readyToContact__block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+    background-color: c.$ultraLightGrey;
+
+    .readyToContact__picture {
+        width: 100%;
+        height: 720px;
+    }
+
+    .readyToContact__content {
+        display: flex;
+        padding: 64px 295px 293px 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 64px;
+        flex-shrink: 0;
+
+        .readyToContact__body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+            color: c.$accentBlue;
+            width: 395px;
+
+            span {
+                @include m.text2();
+                width: 100%;
+            }
+
+            p {
+                @include m.text1();
+
+                width: 100%;
+            }
+        }
+    }
+}

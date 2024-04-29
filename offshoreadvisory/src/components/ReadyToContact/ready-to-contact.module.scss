@@ -16,7 +16,7 @@
 
     .readyToContact__content {
         display: flex;
-        padding: 64px 295px 293px 32px;
+        padding: 64px 295px 0px 32px;
         flex-direction: column;
         align-items: flex-start;
         gap: 64px;
@@ -28,16 +28,14 @@
             align-items: flex-start;
             gap: 32px;
             color: c.$accentBlue;
-            width: 395px;
+            width: 550px;
 
             span {
                 @include m.text2();
-                width: 100%;
+                width: 90%;
             }
 
-            p {
-                @include m.text1();
-
+            h3 {
                 width: 100%;
             }
         }

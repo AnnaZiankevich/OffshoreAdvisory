@@ -16,7 +16,7 @@ const ReadyToContact = ({ title, subtitle, img }) => {
             <div className={style.readyToContact__content}>
                 <div className={style.readyToContact__body}>
                     <span>{title}</span>
-                    <p>{subtitle}</p>
+                    <h3>{subtitle}</h3>
                 </div>
                 <Button color='blue' />
             </div>

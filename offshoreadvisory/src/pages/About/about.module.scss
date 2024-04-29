@@ -1,3 +1,141 @@
 @use '../../styles/colors' as c;
 @use '../../styles/mixins' as m;
 
+.about {
+    .about__start {
+        height: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 446px 389px 96px 12px;
+
+        background-color: c.$ultraLightGrey;
+        color: c.$lightBlue;
+
+        .about__description {
+            max-width: 80%;
+        }
+    }
+
+    .about__picture {
+        width: 100%;
+        height: 70vh;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../assets/img/picture-about.jpeg') lightgray no-repeat;
+        background-size: cover;
+        background-position: bottom center;
+        filter: grayscale(1);
+    }
+
+    .about__mission {
+        height: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 160px 666px 104px 12px;
+
+        background-color: c.$ultraLightGrey;
+        
+        .about__missionSecondText {
+            @include m.text3;
+
+            color: c.$lightPurple;
+            max-width: 55%;
+        }
+
+        .about__missionMainText {
+            color: c.$lightBlue;
+            max-width: 65%;
+        }
+    }
+
+    .about__who {
+        width: 100%;
+        background-color: c.$ultraDarkBlue;
+
+        .about__whoContent {
+            padding: 160px 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .about__whoTitle {
+                @include m.text1;
+                color: c.$white;
+            }
+
+            .about__whoInfo {
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                gap: 12px;
+                height: 600px;
+
+                .about__whoItem {
+                    height: 100%;
+                    border-radius: 8px;
+                    background-color: c.$accentBlue;
+                    color: c.$white;
+                    width: 429px;
+
+                    .about__WhoItemContent {
+                        height: 100%;
+                        // width: 25vw;
+                        // width: 360px;
+                        padding: 48px 37px 48px 32px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+
+    .about__apart {
+        width: 100%;
+        background-color: c.$ultraDarkBlue;
+
+        .about__apartContent {
+            padding: 0px 64px 160px 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 88px;
+
+            h1 {
+                color: c.$white;
+            }
+
+            .about__apartInfo {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+
+                .about__apartInfoItems {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 48px;
+                    width: 644px;
+
+                    .about__apartItem {
+                        display: flex;
+                        padding-top: 32px;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 24px;
+                        align-self: stretch;
+                        border-top: 1px solid c.$darkBlue;
+
+                        h3 {
+                            color: c.$white;
+                        }
+
+                        .about__apartItemInfo {
+                            @include m.text3;
+                            color: c.$lightPurple;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

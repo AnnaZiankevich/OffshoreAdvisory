@@ -1,0 +1,186 @@
+@use '../../styles/colors' as c;
+@use '../../styles/mixins' as m;
+
+$url: '../../assets/img/picture-contactUs.jpeg';
+$position: center center;
+
+.contacts {
+    .contacts__start {
+        background-color: c.$ultraLightGrey;
+
+        .contacts_startContent {
+            padding: 488px 389px 96px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            color: c.$lightBlue;
+            max-width: 80%;
+        }
+    }
+
+    .contacts__picture {
+        @include m.picture($url, $position);
+    }
+
+    .contacts__contactForm {
+        background-color: c.$ultraDarkBlue;
+
+        .contacts__contactFormContent {
+            display: inline-flex;
+            padding: 160px 64px;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 116px;
+            width: 100%;
+
+            .contacts__contactFormText {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                color: c.$white;
+                
+                .contacts__contactFormDesc {
+                    @include m.text1();
+                }
+            }
+
+            .contacts__contactFormForm form {
+                display: flex;
+                width: 650px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+
+                .contacts__contactFieldGroup {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    align-self: stretch;
+
+                    .contacts__contactFieldName {
+                        @include m.text3();
+
+                        color: c.$lightPurple;
+                    }
+
+                    input {
+                        @include m.text2();
+
+                        padding: 24px 32px;
+                        border-radius: 4px;
+                        background-color: c.$darkBlue;
+                        outline: none;
+                        border: none;
+                        width: 100%;
+                        color: c.$white;
+
+                        &::placeholder {
+                            color: c.$ultraDarkBlue;
+                        }
+
+                        &:hover::placeholder {
+                            color: c.$lightPurple;
+                        }
+                    }
+
+                    textarea {
+                        @include m.text2();
+
+                        padding: 24px 32px;
+                        border-radius: 4px;
+                        background-color: c.$darkBlue;
+                        outline: none;
+                        border: none;
+                        resize: none;
+                        width: 100%;
+                        height: 262px;
+                        color: c.$white;
+
+                        &::placeholder {
+                            color: c.$ultraDarkBlue;
+                        }
+
+                        &:hover::placeholder {
+                            color: c.$lightPurple;
+                        }
+                    }
+                }
+
+                .contacts__contactFormBottom {
+                    margin-top: 48px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3 { color: c.$white }
+
+                    button {
+                        @include m.text2();
+
+                        display: flex;
+                        padding: 10px 16px;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 120px;
+                        background-color: c.$white;
+                        color: c.$accentBlue;
+                        outline: none;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .contacts__learnMore {
+        background-color: c.$ultraLightGrey;
+        width: 100%;
+
+        .contacts__learnMoreContent {
+            width: 100%;
+            display: flex;
+            height: 701px;
+            padding: 160px 64px;
+            justify-content: center;
+            flex-shrink: 0;
+            flex-direction: column;
+            gap: 64px;
+
+            .contacts__learnMoreText {
+                @include m.text1();
+
+                color: c.$accentBlue;
+
+                p {
+                    padding-left: 46.5vw;
+                }
+            }
+
+            .contacts__learnMoreInfo {
+                display: flex;
+                gap: 12px;
+                width: 100%;
+
+                .contacts__learnMoreCard {
+                    background-color: c.$white;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 88px;
+                    border-radius: 8px;
+                    padding: 48px 24px;
+                    width: 50%;
+
+                    .contacts__learnMoreName {
+                        @include m.text3();
+                        color: c.$lightPurple;
+                    }
+
+                    .contacts__learnMoreValue {
+                        color: c.$accentBlue;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,9 @@
 @use '../../styles/colors' as c;
 @use '../../styles/mixins' as m;
 
+$url: '../../assets/img/picture-about.jpeg';
+$position: bottom center;
+
 .about {
     .about__start {
         height: 100%;
@@ -18,12 +21,7 @@
     }
 
     .about__picture {
-        width: 100%;
-        height: 70vh;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../assets/img/picture-about.jpeg') lightgray no-repeat;
-        background-size: cover;
-        background-position: bottom center;
-        filter: grayscale(1);
+        @include m.picture($url, $position);
     }
 
     .about__mission {

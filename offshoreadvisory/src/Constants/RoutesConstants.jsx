@@ -7,6 +7,6 @@ export const WESTERN_SAHARA = "regions/western-sahara"
 export const ST_LUCIA = "regions/st-lucia"
 export const ST_VINCENT = "regions/st-vincent"
 export const COMOROS = "regions/comoros"
-export const ASSEST_PROTECTION = "/asset-protection "
+export const ASSEST_PROTECTION = "/asset-protection"
 export const CONTACT_US = "/contact-us"
 

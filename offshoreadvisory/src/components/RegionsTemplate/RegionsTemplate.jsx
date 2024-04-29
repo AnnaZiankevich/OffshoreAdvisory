@@ -67,7 +67,7 @@ const RegionsTemplate = ({ info }) => {
             <div className={style.region__start}
                  style={{
                     background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('${imgPath}') lightgray 50% / cover no-repeat`,
-                    backgroundPosition: 'top center'
+                    backgroundPosition: 'center center'
                  }}
             >
                 <h2>{title}</h2>
@@ -91,7 +91,9 @@ const RegionsTemplate = ({ info }) => {
                                      }}
                                 ></div>
                                 <div className={style.region__servInfo}>
-                                    <h2>{item.title}</h2>
+                                    <h2 style={{ whiteSpace: "pre-line" }}>
+                                        {item.title}
+                                    </h2>
                                     <p>{item.description}</p>
                                 </div>
                             </div>

@@ -1,9 +1,39 @@
-import React, { useState, } from 'react';
+import React, { useState, useRef } from 'react';
 import style from './asset.module.scss'
 import ReadyToContact from '../../components/ReadyToContact/ReadyToContact'
 import img from '../../assets/img/picture-contact.jpeg'
 
 const AssetProtection = () => {
+
+    const sliderRef = useRef(null);
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+      setIsDown(true);
+      sliderRef.current.classList.add("active");
+      setStartX(e.pageX - sliderRef.current.offsetLeft);
+      setScrollLeft(sliderRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+      setIsDown(false);
+      sliderRef.current.classList.remove("active");
+    };
+
+    const handleMouseUp = () => {
+      setIsDown(false);
+      sliderRef.current.classList.remove("active");
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - sliderRef.current.offsetLeft;
+      const walk = x - startX;
+      sliderRef.current.scrollLeft = scrollLeft - walk;
+    };
 
     const approachInfo = [
         {
@@ -63,7 +93,15 @@ const AssetProtection = () => {
                                 offshore solutions to mitigate risk and optimize security. Our comprehensive services encompass:
                             </div>
                         </div>
-                        <div className={style.asset__approachInfo}>
+                        <div className={style.asset__approachInfo} 
+                             style={{ overflowY: "auto", cursor: "pointer" }} 
+                             ref={sliderRef}
+                             onMouseDown={handleMouseDown}
+                             onMouseLeave={handleMouseLeave}
+                             onMouseUp={handleMouseUp}
+                             onMouseMove={handleMouseMove}
+                        >
+                          <div className={style.asset__approachDist} style={{ display: "flex", width: "125%" }}>
                             {
                                 approachInfo.map((item, index) => (
                                     <div key={index} className={style.asset__approachCard}>
@@ -72,6 +110,7 @@ const AssetProtection = () => {
                                     </div>
                                 ))
                             }
+                          </div>
                         </div>
                     </div>
                 </div>

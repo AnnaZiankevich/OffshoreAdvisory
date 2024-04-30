@@ -69,40 +69,47 @@ $position: center center;
             }
 
             .asset__approachInfo {
-                display: flex;
-                flex-wrap: nowrap;
-                overflow-x: scroll;
-                align-items: flex-start;
-                gap: 12px;
+                // display: flex;
+                // flex-wrap: nowrap;
+                // overflow-x: scroll;
+                
+                // overflow: auto;
+                // -webkit-overflow-scrolling: touch;
 
                 &::-webkit-scrollbar {
                     display: none;
                 }
 
-                & > :nth-child(1) {
-                    margin-left: 372px;
-                }
-
-                & > :nth-child(4) {
-                    margin-right: 12px;
-                }
-
-                .asset__approachCard {
-                    flex: 0 0 auto;
-                    padding: 48px 37px 48px 32px;
-                    width: 360px;
-                    height: 504px;
-                    background-color: c.$accentBlue;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
+                .asset__approachDist {
+                    flex-wrap: nowrap;
                     align-items: flex-start;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    color: c.$white;
-    
-                    p {
-                        @include m.text3();
+                    gap: 12px;
+
+                    & > :nth-child(1) {
+                        margin-left: 372px;
+                    }
+
+                    & > :nth-child(4) {
+                        margin-right: 12px;
+                    }
+
+                    .asset__approachCard {
+                        flex: 0 0 auto;
+                        padding: 48px 37px 48px 32px;
+                        width: 360px;
+                        height: 504px;
+                        background-color: c.$accentBlue;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        color: c.$white;
+                    
+                        p {
+                            @include m.text3();
+                        }
                     }
                 }
             }

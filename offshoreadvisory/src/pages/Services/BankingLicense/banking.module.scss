@@ -1,0 +1,75 @@
+@use '../../../styles/colors' as c;
+@use '../../../styles/mixins' as m;
+
+$url: '../../../assets/img/picture-banking.jpg';
+$position: center center;
+
+.banking {
+
+    .banking__whyUs {
+        background-color: c.$ultraLightGrey;
+
+        .banking__whyUsContent {
+            display: flex;
+            padding: 160px 12px;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 48px;
+
+            .banking__whyUsTitle {
+                @include m.text1();
+                color: c.$lightPurple;
+
+                & > span {
+                    color: c.$lightBlue;
+                }
+            }
+
+            .banking__whyUsInfo {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 84px;
+
+                & > :nth-child(4) {
+                    border-bottom: none!important;
+                }
+
+                .banking__whyUsItem {
+                    display: flex;
+                    padding: 16px 0px;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-self: stretch;
+
+                    border-bottom: 2px solid c.$lightGrey;
+
+                    h2 {
+                        color: c.$lightBlue;
+                    }
+
+                    .banking__whyUsItemDesc {
+                        @include m.text2();
+                        width: 456px;
+                        color: c.$lightPurple;
+                    }
+                }
+            }
+        }
+    }
+
+    .banking__picture {
+        @include m.picture($url, $position);
+    }
+
+    .banking__contact *> h3 {
+        @include m.typography();
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; 
+        letter-spacing: -1.2px;
+    }
+}

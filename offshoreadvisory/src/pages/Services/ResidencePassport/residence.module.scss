@@ -1,0 +1,64 @@
+@use '../../../styles/colors' as c;
+@use '../../../styles/mixins' as m;
+
+$url: '../../../assets/img/picture-residence.jpg';
+$position: center center;
+
+.residence {
+
+    .residence__countries {
+        background-color: c.$ultraLightGrey;
+
+        .residence__countriesContent {
+            display: flex;
+            padding: 160px 12px;
+            justify-content: center;
+            flex-direction: column;
+            gap: 84px;
+
+            & > :nth-child(4) {
+                border-bottom: none!important;
+            }
+
+            .residence__countriesItem {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 0px;
+                border-bottom: 2px solid c.$lightGrey;
+
+                h1 {
+                    color: c.$lightBlue;
+                }
+
+                .residence__countriesItemDesc {
+                    width: 936px;
+                    color: c.$lightPurple;
+                }
+            }
+        }
+    }
+
+    .residence__picture {
+        @include m.picture($url, $position);
+    }
+
+    .residence__services *> h2 {
+        @include m.typography();
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; 
+        letter-spacing: -1.2px;
+        width: 40%;
+    }
+
+    .residence__contact *> h3 {
+        @include m.typography();
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; 
+        letter-spacing: -1.2px;
+    }
+}

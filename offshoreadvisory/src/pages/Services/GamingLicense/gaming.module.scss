@@ -1,0 +1,145 @@
+@use '../../../styles/colors' as c;
+@use '../../../styles/mixins' as m;
+
+$url: '../../../assets/img/picture-gaming.jpg';
+$position: center center;
+
+.gaming {
+    .gaming__start {
+        background-color: c.$ultraDarkBlue;
+
+        .gaming__startContent {
+            padding: 536px 696px 96px 12px;
+            width: 90%;
+
+            h2 {
+                color: c.$white;
+                span { color: c.$lightBlue }
+            }
+        }
+    }
+
+    .gaming__info {
+        background-color: c.$ultraLightGrey;
+
+        .gaming__infoContent {
+            padding: 0px 12px;
+
+            .gaming__infoCards {
+                padding: 160px 64px 120px 64px;
+                display: flex;
+                gap: 12px;
+                border-bottom: 1.5px solid c.$lightGrey;
+
+                .gaming__infoCard {
+                    width: 50%;
+                    background-color: c.$white;
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    height: 462px;
+                    padding: 48px 24px;
+                    justify-content: space-between;
+
+                    .gaming__infoCardTitle {
+                        @include m.text3();
+                        color: c.$lightPurple;
+                    }
+
+                    .gaming__infoCardDesc {
+                        @include m.text1();
+                        color: c.$lightBlue;
+                    }
+                }
+            }
+        }
+    }
+
+    .gaming__restricted {
+        background-color: c.$ultraLightGrey;
+
+        .gaming__restrictedContent {
+            padding: 120px 64px 160px 372px;
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+            width: 100%;
+
+            .gaming__restrictedTitle {
+                color: c.$lightBlue;
+                span { color: c.$lightPurple }
+            }
+
+            .gaming__restrictedInfo {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                
+                .gaming__restrictedText {
+                    @include m.text2();
+                    color: c.$lightBlue
+                }
+            }
+        }
+    }
+
+    .gaming__whyUs {
+        background-color: c.$ultraLightGrey;
+
+        .gaming__whyUsContent {
+            display: flex;
+            padding: 160px 12px;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 48px;
+
+            .gaming__whyUsTitle {
+                @include m.text1();
+                color: c.$lightPurple;
+
+                & > span {
+                    color: c.$lightBlue;
+                }
+            }
+
+            .gaming__whyUsInfo {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 84px;
+
+                & > :nth-child(3) {
+                    border-bottom: none!important;
+                }
+
+                .gaming__whyUsItem {
+                    display: flex;
+                    padding: 16px 0px;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-self: stretch;
+
+                    border-bottom: 2px solid c.$lightGrey;
+
+                    h3 {
+                        color: c.$lightBlue;
+                        width: 373px;
+                    }
+
+                    .gaming__whyUsItemDesc {
+                        @include m.text2();
+                        width: 936px;
+                        color: c.$lightPurple;
+                    }
+                }
+            }
+        }
+    }
+    
+    .gaming__picture {
+        @include m.picture($url, $position);
+    }
+}
+

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import style from './regions-template.module.scss'
 import ReadyToContact from '../ReadyToContact/ReadyToContact';
 import getStarted from '../../assets/img/picture-started1.jpeg';
@@ -26,6 +26,36 @@ const RegionsTemplate = ({ info }) => {
 
     const services = servicesData.services
     const benefits = benefitsData.benefits
+
+    const sliderRef = useRef(null);
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+      setIsDown(true);
+      sliderRef.current.classList.add("active");
+      setStartX(e.pageX - sliderRef.current.offsetLeft);
+      setScrollLeft(sliderRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+      setIsDown(false);
+      sliderRef.current.classList.remove("active");
+    };
+
+    const handleMouseUp = () => {
+      setIsDown(false);
+      sliderRef.current.classList.remove("active");
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - sliderRef.current.offsetLeft;
+      const walk = x - startX;
+      sliderRef.current.scrollLeft = scrollLeft - walk;
+    };
 
     const readyToContactInfo = [
         'Ready to embark on a journey of international business excellence?',
@@ -106,7 +136,15 @@ const RegionsTemplate = ({ info }) => {
                     Benefits of Choosing <br/>
                     {benefitstitle}
                 </div>
-                <div className={style.region__benefitsCards}>
+                <div className={style.region__benefitsCards}
+                     style={{ overflowY: "auto", cursor: "pointer" }} 
+                     ref={sliderRef}
+                     onMouseDown={handleMouseDown}
+                     onMouseLeave={handleMouseLeave}
+                     onMouseUp={handleMouseUp}
+                     onMouseMove={handleMouseMove}
+                >
+                  <div className={style.region__benefitsDist} style={{ display: "flex", width: "125%" }}>
                     {
                         benefits.map((item, index) => (
                             <div key={index} className={style.region__benefitsCard}>
@@ -115,6 +153,7 @@ const RegionsTemplate = ({ info }) => {
                             </div>
                         ))
                     }
+                  </div>
                 </div>
             </div>
             <ReadyToContact title={readyToContactInfo[0]} subtitle={readyToContactInfo[1]} img={getStarted} />

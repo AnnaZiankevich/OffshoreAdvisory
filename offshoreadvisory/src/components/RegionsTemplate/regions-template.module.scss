@@ -2,6 +2,7 @@
 @use '../../styles/mixins' as m;
 
 .region {
+    overflow-x: hidden;
 
     .region__start {
         display: inline-flex;
@@ -66,7 +67,6 @@
 
                 .region__servItemLeft {
                     display: grid;
-                    // grid-auto-flow: row;
                     direction: rtl;
                     grid-auto-flow: dense;
                     grid-template-columns: repeat(2, 1fr);
@@ -105,35 +105,37 @@
         }
 
         .region__benefitsCards {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: scroll;
-            align-items: flex-start;
-            gap: 12px;
-
+            
             &::-webkit-scrollbar {
                 display: none;
-              }
-
-            & > :nth-child(1) {
-                margin-left: 372px;
             }
 
-            .region__benefitsCard {
-                flex: 0 0 auto;
-                padding: 48px 37px 48px 32px;
-                width: 360px;
-                height: 504px;
-                background-color: c.$accentBlue;
+            .region__benefitsDist {
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                flex-wrap: nowrap;
                 align-items: flex-start;
-                border-radius: 8px;
-                cursor: pointer;
+                gap: 12px;
 
-                p {
-                    @include m.text3();
+                & > :nth-child(1) {
+                    margin-left: 372px;
+                }
+
+                .region__benefitsCard {
+                    flex: 0 0 auto;
+                    padding: 48px 37px 48px 32px;
+                    width: 360px;
+                    height: 504px;
+                    background-color: c.$accentBlue;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    border-radius: 8px;
+                    cursor: pointer;
+
+                    p {
+                        @include m.text3();
+                    }
                 }
             }
         }

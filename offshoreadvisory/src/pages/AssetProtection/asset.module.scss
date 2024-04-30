@@ -69,13 +69,6 @@ $position: center center;
             }
 
             .asset__approachInfo {
-                // display: flex;
-                // flex-wrap: nowrap;
-                // overflow-x: scroll;
-                
-                // overflow: auto;
-                // -webkit-overflow-scrolling: touch;
-
                 &::-webkit-scrollbar {
                     display: none;
                 }

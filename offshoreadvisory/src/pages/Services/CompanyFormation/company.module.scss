@@ -1,0 +1,39 @@
+@use '../../../styles/colors' as c;
+@use '../../../styles/mixins' as m;
+
+$url: '../../../assets/img/picture-company.jpg';
+$position: center center;
+
+.company {
+    .company__whyUs {
+        background-color: c.$ultraLightGrey;
+        display: flex;
+        justify-content: flex-end;
+
+        .company__whyUsContent {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+            color: c.$lightBlue;
+            padding: 160px 63px 160px 612px;
+            width: 80%;
+
+            .company__whyUsText {
+                @include m.text1();
+            }
+        }
+    }
+
+    .company__picture {
+        @include m.picture($url, $position);
+    }
+
+    .company__contact *> h3 {
+        @include m.typography();
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; 
+        letter-spacing: -1.2px;
+    }
+}

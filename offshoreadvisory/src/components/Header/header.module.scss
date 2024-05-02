@@ -30,5 +30,37 @@
 .header_link {
     @include m.text3();
 
+    color: c.$grey;
+
+    &:hover {
+        color: c.$lightBlue;
+    }
+}
+
+.header_link_active {
+    @include m.text3();
+
     color: c.$accentBlue;
+
+    &:hover {
+        color: c.$lightBlue;
+    }
+}
+
+.header_link_home {
+    @include m.text3();
+    color: c.$accentBlue;
+    
+    & +* .header_link, .title {
+        @include m.text3();
+        color: c.$accentBlue;
+
+        &:hover {
+            color: c.$lightBlue;
+        }
+    }
+
+    &:hover {
+        color: c.$lightBlue;
+    }
 }

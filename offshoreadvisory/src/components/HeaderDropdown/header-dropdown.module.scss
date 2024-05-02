@@ -21,7 +21,7 @@
     background-color: c.$white;
 }
 
-.title {
+.title_active {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -29,6 +29,29 @@
     transition: .5s all ease;
     @include m.text3();
     color: c.$accentBlue;
+
+    img {
+        transition: .5s all ease;
+    }
+}
+
+.title_active:hover {
+    color: c.$lightBlue;
+
+    img {
+        transition: .5s all ease;
+        filter: invert(43%) sepia(6%) saturate(8760%) hue-rotate(-45deg) brightness(244%) contrast(79%);
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: .5s all ease;
+    @include m.text3();
+    color: c.$grey;
 
     img {
         transition: .5s all ease;
@@ -71,5 +94,9 @@
     gap: 14px;
     @include m.text4();
     color: c.$accentBlue;
+
+    &:hover {
+        color: c.$lightBlue;
+    }
 }
 

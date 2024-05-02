@@ -7,7 +7,7 @@ const ButtonContact = ({color}) => {
 
     return (
         <Link to={CONTACT_US}>
-            <button class={color === 'blue' ? style.blue_button : style.white_button}>
+            <button className={color === 'blue' ? style.blue_button : style.white_button}>
                 Contact Us
             </button>
         </Link>

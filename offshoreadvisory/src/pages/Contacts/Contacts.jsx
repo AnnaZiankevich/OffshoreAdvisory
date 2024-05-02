@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import style from './contacts.module.scss'
 
 const Contacts = () => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
+
+    const [success, setSuccess] = useState(false);
+
+    let apiUrl = 'https://assembly.tehnik.tech/api/send_form/from';
+    const objective = 'send message';
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        project: "offshoreadvisory",
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+        objective: objective
+      };
+
+      try {
+        const response = await axios.post(apiUrl, formData);
+        console.log(response.data);
+        setSuccess(true);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
     return (
         <>
@@ -23,29 +55,45 @@ const Contacts = () => {
                             <div className={style.contacts__contactFormDesc}>We’ll get back<br/>to you as soon<br/>as we can.</div>
                         </div>
                         <div className={style.contacts__contactFormForm}>
-                            <form action="post">
+                            <form onSubmit={handleSubmit}>
                                 <div className={style.contacts__contactFieldGroup}>
                                     <div className={style.contacts__contactFieldName}>Name</div>
-                                    <input type="text" placeholder='Enter your name' />
+                                    <input type="text" 
+                                           placeholder='Enter your name'
+                                           value={name}
+                                           onChange={(e) => setName(e.target.value)}
+                                     />
                                 </div>
 
                                 <div className={style.contacts__contactFieldGroup}>
                                     <div className={style.contacts__contactFieldName}>Email</div>
-                                    <input type='email' placeholder='Enter your email' />
+                                    <input type='email' 
+                                           placeholder='Enter your email' 
+                                           value={email}
+                                           onChange={(e) => setEmail(e.target.value)}
+                                    />
                                 </div>
 
                                 <div className={style.contacts__contactFieldGroup}>
                                     <div className={style.contacts__contactFieldName}>Phone number</div>
-                                    <input type='phone' placeholder='Enter your phone number' />
+                                    <input type='phone' 
+                                           placeholder='Enter your phone number'
+                                           value={phone}
+                                           onChange={(e) => setPhone(e.target.value)} 
+                                    />
                                 </div>
 
                                 <div className={style.contacts__contactFieldGroup}>
                                     <div className={style.contacts__contactFieldName}>Message</div>
-                                    <textarea type='text' placeholder='Enter your message' />
+                                    <textarea type='text' 
+                                              placeholder='Enter your message' 
+                                              value={message}
+                                              onChange={(e) => setMessage(e.target.value)}
+                                    />
                                 </div>
 
                                 <div className={style.contacts__contactFormBottom}>
-                                    <h3 className={style.contacts__contactFormSuccess} style={{opacity: '0'}}>Success!</h3>
+                                    <h3 className={style.contacts__contactFormSuccess} style={{opacity: success ? '1' : '0'}}>Success!</h3>
                                     <button type='submit'>Send message</button>
                                 </div>
                             </form>

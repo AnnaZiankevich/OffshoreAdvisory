@@ -10,7 +10,7 @@ const List = ({ title, subtitle, infoArray }) => {
                 <div className={style.list__info}>
                     {
                         infoArray.map(item => { return (
-                            <div className={style.list__item}>
+                            <div className={style.list__item} key={item.title}>
                                 <h3>{item.title}</h3>
                                 <p>{item.text}</p>
                             </div>

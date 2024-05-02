@@ -7,6 +7,7 @@ import { startPageWhy, startPageServices, startPageHow } from '../../Constants/S
 import Button from '../../components/UI/ButtonContact/ButtonContact'
 import ScrollMagic from 'scrollmagic';
 import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Home = () => {
 
@@ -42,14 +43,14 @@ const Home = () => {
                 </div>
                 <div className={style.home__picture}></div>
                 <div className={style.home__services}>
-                    <h1 className={style.home__servicesTitle} id='#header'>
+                    <h1 className={style.home__servicesTitle}>
                         Our Services
                     </h1>
                     <div className={style.home__servicesContent}>
                         {
                             startPageServices.map(item => { 
                                 return (
-                                    <div key={item.id} className={style.home__servicesItem} id='#item'>
+                                    <div key={item.id} className={style.home__servicesItem}>
                                         <h2 className={style.home__servicesName}>{item.name}</h2>
                                         <h4 className={style.home__servicesValue}>{item.value}</h4>
                                     </div>

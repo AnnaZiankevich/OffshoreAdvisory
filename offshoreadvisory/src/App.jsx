@@ -20,7 +20,7 @@ function App() {
         {
             publicRoutes.map(route => {
                 return (
-                    <Route path={route.path} element={route.element}/>
+                    <Route path={route.path} element={route.element} key={route.path} />
                 )
             })
         }
@@ -28,7 +28,7 @@ function App() {
         {
             servicesPublicRoutes.map(route => {
                 return (
-                    <Route path={route.path} element={route.element}/>
+                    <Route path={route.path} element={route.element} key={route.path} />
                 )
             })
         }
@@ -36,7 +36,7 @@ function App() {
         {
             regionsPublicRoutes.map(route => {
                 return (
-                    <Route path={route.path} element={route.element}/>
+                    <Route path={route.path} element={route.element} key={route.path} />
                 )
             })
         }

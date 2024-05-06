@@ -9,9 +9,19 @@
     
     background-color: c.$ultraLightGrey;
 
+    @media only screen
+    and (max-device-width: 1190px) {
+        flex-direction: column;
+    }
+
     .readyToContact__picture {
         width: 100%;
         height: 720px;
+
+        @media only screen
+        and (max-device-width: 1190px) {
+            height: 420px;
+        }
     }
 
     .readyToContact__content {

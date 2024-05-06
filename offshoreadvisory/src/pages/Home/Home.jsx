@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import style from './home.module.scss'
 import { Link } from "react-router-dom"
 import arrow from '../../assets/img/arrow.svg'
@@ -10,6 +10,51 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Home = () => {
+
+    const sliderRef = useRef(null);
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [mobile, setMobile] = useState(false);
+
+    const handleMouseDown = (e) => {
+      setIsDown(true);
+      sliderRef.current.classList.add("active");
+      setStartX(e.pageX - sliderRef.current.offsetLeft);
+      setScrollLeft(sliderRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+      setIsDown(false);
+      sliderRef.current.classList.remove("active");
+    };
+
+    const handleMouseUp = () => {
+      setIsDown(false);
+      sliderRef.current.classList.remove("active");
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - sliderRef.current.offsetLeft;
+      const walk = x - startX;
+      sliderRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+          const windowWidth = window.innerWidth;
+          setMobile(windowWidth <= 1190);
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
     return (
         <>
@@ -46,7 +91,14 @@ const Home = () => {
                     <h1 className={style.home__servicesTitle}>
                         Our <br/>Services
                     </h1>
-                    <div className={style.home__servicesContent}>
+                    <div className={style.home__servicesContent}
+                         style={{ overflowY: mobile ? "auto" : "", cursor: mobile ? "pointer" : "", width: '100%'}} 
+                         ref={mobile ? sliderRef : null}
+                         onMouseDown={mobile ? handleMouseDown : null}
+                         onMouseLeave={mobile ? handleMouseLeave : null}
+                         onMouseUp={mobile ? handleMouseUp : null}
+                         onMouseMove={mobile ? handleMouseMove : null}
+                    >
                         {
                             startPageServices.map(item => { 
                                 return (
@@ -68,7 +120,9 @@ const Home = () => {
                             startPageHow.map(item => {
                                 return (
                                     <div key={item.id} className={style.home__workItem}>
-                                        <h1>{item.name}</h1>
+                                        {mobile ?
+                                        <h2>{item.name}</h2> :
+                                        <h1>{item.name}</h1>}
                                         <p>{item.value}</p>
                                     </div>
                             )})
@@ -79,7 +133,9 @@ const Home = () => {
                     <div className={style.home__getStartedPicture}></div>
                     <div className={style.home__getStartedContent}>
                         <div className={style.home__getStartedBody}>
-                            <h3>Get Started Today!</h3>
+                            {mobile ?
+                            <h2>Get Started Today!</h2> :
+                            <h3>Get Started Today!</h3>}
                             <p>
                                 Embark on a journey of offshore business excellence with Offshore Licensing solution, 
                                 contact us now to explore the possibilities and secure your license in Western Sahara, 

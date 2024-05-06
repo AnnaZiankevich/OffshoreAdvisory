@@ -2,6 +2,8 @@
 @use '../../styles/mixins' as m;
 
 .home {
+    overflow-x: hidden;
+
     .home__start {
         height: 100%;
         display: inline-flex;
@@ -11,10 +13,26 @@
         lightgray 50% / cover no-repeat;
         background-size: 100% 100%;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            width: 100%;
+            padding: 364px 25px 88px 12px;
+        }
+
+        @media only screen
+        and (max-device-width: 550px) {
+            background-size: 260% 100%;
+        }
+
         .home__startContent {
             display: flex;
             flex-direction: column;
             gap: 48px;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                gap: 32px;
+            }
 
             .home__mainText {
                 color: c.$white;
@@ -56,9 +74,24 @@
         justify-content: flex-end;
         align-items: center;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            width: 100%;
+            padding: 140px 12px;
+            justify-content: start;
+            align-items: flex-start;
+            gap: 48px;
+        }
+
         .home__whyUsTitle {
             color: c.$lightBlue;
             margin-bottom: 40px;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                margin-bottom: 16;
+            }
+
         }
 
         .home__whyUsItem {
@@ -77,6 +110,12 @@
             .home__whyUsValue {
                 @include m.text3();
                 color: c.$grey;
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    @include m.text2();
+                    color: c.$grey;
+                }
             }
         }
     }
@@ -98,15 +137,40 @@
         // gap: 161px;
         background-color: c.$ultraLightGrey;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            padding: 140px 0px 120px 12px;
+            flex-direction: column;
+            gap: 64px;
+            justify-content: start;
+        }
+
         .home__servicesTitle {
             color: c.$lightBlue;
             width: 60%;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                @include m.typography();
+                color: c.$lightBlue;
+                font-size: 72px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 72px; /* 100% */
+                letter-spacing: -2.88px;
+            }
         }
 
         .home__servicesContent {
             display: flex;
             flex-direction: column;
             gap: 24px;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                gap: 0px;
+                flex-direction: row;
+            }
 
             .home__servicesItem {
                 display: flex;
@@ -119,14 +183,39 @@
                 background-color: c.$accentBlue;
                 color: c.$white;
 
+                @media only screen
+                and (max-device-width: 1190px) {
+                    padding: 64px 16px;
+                    border-radius: 8px;
+                    min-width: 326px;
+                    margin-right: 12px;
+                }
+
                 h2 {
                     color: c.$white;
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        width: 60%;
+                    }
                 }
 
                 .home__servicesValue {
                     width: 360px;
                     color: c.$lightGrey;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        width: 90%;
+                    }
                 }
+
+                & > :nth-child(3) {
+                    margin-right: 12px;
+                }
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
             }
         }
     }
@@ -141,6 +230,12 @@
         gap: 72px;
         background-color: c.$ultraDarkBlue;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            padding: 140px 12px;
+            gap: 64px;
+        }
+
         .home__workTitle {
             & > :nth-child(1) {
                 color: c.$darkBlue;
@@ -148,6 +243,13 @@
 
             & > :nth-child(2) {
                 color: c.$white;
+            }
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                h3 {
+                    @include m.text1();
+                }
             }
         }
 
@@ -166,13 +268,23 @@
                 align-self: stretch;
                 border-bottom: 2px solid c.$darkBlue;
 
-                h1 {
+                h1, h2 {
                     color: c.$white;
                 }
 
                 p {
+                    @include m.text2();
                     color: c.$grey;
                     width: 291px;
+                }
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    flex-direction: column;
+                    gap: 24px;
+                    justify-content: start;
+                    align-items: flex-start;
+                    padding: 0px 0px 16px 0px;
                 }
             }
 
@@ -190,11 +302,21 @@
         
         background-color: c.$ultraLightGrey;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            flex-direction: column;
+        }
+
         .home__getStartedPicture {
             width: 100%;
             height: 720px;
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), 
             url('../../assets//img/picture-started.jpeg') lightgray 50% / cover no-repeat;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                height: 420px;
+            }
         }
 
         .home__getStartedContent {
@@ -205,6 +327,11 @@
             gap: 64px;
             flex-shrink: 0;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 64px 12px 332px 12px;
+            }
+
             .home__getStartedBody {
                 display: flex;
                 flex-direction: column;
@@ -212,10 +339,20 @@
                 gap: 32px;
                 color: c.$accentBlue;
 
+                @media only screen
+                and (max-device-width: 1190px) {
+                    width: 70%;
+                }
+
                 p {
                     @include m.text1();
 
                     width: 393px;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        width: 100%;
+                    }
                 }
             }
         }

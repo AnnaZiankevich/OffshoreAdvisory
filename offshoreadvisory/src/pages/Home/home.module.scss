@@ -92,15 +92,15 @@
 
     .home__services {
         display: flex;
-        padding: 160px 29px 120px 64px;
+        padding: 160px 12px 120px 64px;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 161px;
+        // gap: 161px;
         background-color: c.$ultraLightGrey;
 
         .home__servicesTitle {
             color: c.$lightBlue;
-            width: 405px;
+            width: 60%;
         }
 
         .home__servicesContent {
@@ -110,7 +110,7 @@
 
             .home__servicesItem {
                 display: flex;
-                width: 816px;
+                width: 100%;
                 padding: 80px 24px;
                 flex-direction: column;
                 align-items: flex-start;

@@ -19,6 +19,17 @@
     gap: 24px;
     border-radius: 6px;
     background-color: c.$white;
+
+    @media only screen
+    and (max-device-width: 1190px) {
+        position: initial;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 0px;
+        align-items: flex-start;
+        margin: 0;
+    }
 }
 
 .title_active {

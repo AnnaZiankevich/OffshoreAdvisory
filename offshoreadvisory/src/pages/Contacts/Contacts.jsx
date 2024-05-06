@@ -19,17 +19,23 @@ const Contacts = () => {
 
       const formData = {
         project: "offshoreadvisory",
-        name: name,
-        email: email,
-        phone: phone,
-        message: message,
-        objective: objective
+        subject: objective,
+        data: {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message,
+        }
       };
 
       try {
         const response = await axios.post(apiUrl, formData);
-        console.log(response.data);
+        // console.log(response.data);
         setSuccess(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
       } catch (error) {
         console.error(error);
       }
@@ -94,7 +100,7 @@ const Contacts = () => {
 
                                 <div className={style.contacts__contactFormBottom}>
                                     <h3 className={style.contacts__contactFormSuccess} style={{opacity: success ? '1' : '0'}}>Success!</h3>
-                                    <button type='submit'>Send message</button>
+                                    <button type='submit' style={{cursor: "pointer"}}>Send message</button>
                                 </div>
                             </form>
                         </div>

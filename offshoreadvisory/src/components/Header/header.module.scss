@@ -9,6 +9,11 @@
     display: flex;
     justify-content: center;
     z-index: 999999;
+
+    @media only screen
+    and (max-device-width: 1190px) {
+        display: none;
+    }
 }
 
 .block {

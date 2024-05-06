@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from "react-router-dom"
 import { publicRoutes, servicesPublicRoutes, regionsPublicRoutes } from "./Constants/PublicRoutes"
 import Home from './pages/Home/Home'
 import Header from '../src/components/Header/Header'
+import MobileHeader from './components/MobileHeader/MobileHeader';
 import Footer from './components/Footer/Footer'
 import './styles/_main.scss'
 
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <div className={s.desktop_header}>
         <Header/>
+        <MobileHeader/>
       </div>
 
       <Routes>

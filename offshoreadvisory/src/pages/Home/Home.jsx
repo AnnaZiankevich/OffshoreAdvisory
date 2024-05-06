@@ -44,7 +44,7 @@ const Home = () => {
                 <div className={style.home__picture}></div>
                 <div className={style.home__services}>
                     <h1 className={style.home__servicesTitle}>
-                        Our Services
+                        Our <br/>Services
                     </h1>
                     <div className={style.home__servicesContent}>
                         {

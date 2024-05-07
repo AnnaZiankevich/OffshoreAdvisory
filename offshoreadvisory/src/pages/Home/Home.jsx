@@ -59,31 +59,7 @@ const Home = () => {
           window.removeEventListener('resize', handleResize);
         };
     }, []);
-
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //       const element = servicesRef.current;
-    //       if (element) {
-    //         const { top, bottom } = element.getBoundingClientRect();
-    //         console.log(top);
-    //         const isTopVisible = top >= 0;
-    //         const isBottomVisible = bottom <= window.innerHeight;
     
-    //         if (isTopVisible && !isBottomVisible) {
-    //           setIsFixed(false);
-    //         } else {
-    //           setIsFixed(true);
-    //         }
-    //       }
-    //     };
-    
-    //     window.addEventListener('scroll', handleScroll);
-    
-    //     return () => {
-    //       window.removeEventListener('scroll', handleScroll);
-    //     };
-    //   }, []);
-
     useEffect(() => {
         const handleScroll = () => {
           const servicesElement = servicesRef.current;

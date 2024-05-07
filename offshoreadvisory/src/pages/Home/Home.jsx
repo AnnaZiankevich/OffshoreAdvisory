@@ -19,6 +19,10 @@ const Home = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [mobile, setMobile] = useState(false);
 
+    const [isFixed, setIsFixed] = useState(false);
+    const servicesRef = useRef(null);
+    const workRef = useRef(null);
+
     const handleMouseDown = (e) => {
       setIsDown(true);
       sliderRef.current.classList.add("active");
@@ -54,7 +58,58 @@ const Home = () => {
         return () => {
           window.removeEventListener('resize', handleResize);
         };
+    }, []);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //       const element = servicesRef.current;
+    //       if (element) {
+    //         const { top, bottom } = element.getBoundingClientRect();
+    //         console.log(top);
+    //         const isTopVisible = top >= 0;
+    //         const isBottomVisible = bottom <= window.innerHeight;
+    
+    //         if (isTopVisible && !isBottomVisible) {
+    //           setIsFixed(false);
+    //         } else {
+    //           setIsFixed(true);
+    //         }
+    //       }
+    //     };
+    
+    //     window.addEventListener('scroll', handleScroll);
+    
+    //     return () => {
+    //       window.removeEventListener('scroll', handleScroll);
+    //     };
+    //   }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const servicesElement = servicesRef.current;
+          const workElement = workRef.current;
+    
+          if (servicesElement && workElement) {
+            const servicesRect = servicesElement.getBoundingClientRect();
+            const workRect = workElement.getBoundingClientRect();
+
+            console.log(workRect.top)
+    
+            const isServicesTopVisible = servicesRect.top <= 0;
+            const isServicesBottomVisible = servicesRect.bottom >= window.innerHeight;
+            const isWorkVisible = workRect.top <= 350;
+    
+            setIsFixed(isServicesTopVisible && !isWorkVisible);
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
       }, []);
+
 
     return (
         <>
@@ -87,8 +142,8 @@ const Home = () => {
                     }
                 </div>
                 <div className={style.home__picture}></div>
-                <div className={style.home__services}>
-                    <h1 className={style.home__servicesTitle}>
+                <div className={style.home__services} ref={mobile ? null : servicesRef}>
+                    <h1 className={style.home__servicesTitle} style={{position: isFixed && !mobile ? 'fixed' : 'absolute', top: isFixed && !mobile ? '120px' : ''}}>
                         Our <br/>Services
                     </h1>
                     <div className={style.home__servicesContent}
@@ -110,7 +165,7 @@ const Home = () => {
                         }
                     </div>
                 </div>
-                <div className={style.home__work}>
+                <div className={style.home__work} ref={mobile ? null : workRef}>
                     <div className={style.home__workTitle}>
                         <h3>Discover</h3>
                         <h3>How We Work</h3>

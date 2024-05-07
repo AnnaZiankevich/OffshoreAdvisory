@@ -76,6 +76,10 @@ const BankingLicense = () => {
                         title='Key Jurisdictions for Banking License Acquisition'
                         infoArray={bankJuri}
                     />
+                    <List 
+                        title='Explore Prominent Jurisdictions'
+                        infoArray={bankJuri}
+                    />
                 </div>
                 <div className={style.banking__contact}>
                     <ReadyToContact 

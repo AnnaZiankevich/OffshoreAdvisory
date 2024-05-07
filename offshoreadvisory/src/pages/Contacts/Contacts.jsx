@@ -119,6 +119,7 @@ const Contacts = () => {
                                 <div className={style.contacts__learnMoreName}>Contact us by sending us an email:</div>
                                 <h3 className={style.contacts__learnMoreValue}>
                                     <a href='mailto:info@offshoreadvisory.pro'>info@offshoreadvisory.pro</a>
+                                    <a href='mailto:info@offshoreadvisory.pro'>info@offshoreadvisory.<br/>pro</a>
                                 </h3>
                             </div>
 

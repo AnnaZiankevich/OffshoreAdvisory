@@ -15,6 +15,13 @@ $position: center center;
             gap: 40px;
             color: c.$lightBlue;
             max-width: 80%;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 406px 12px 48px 12px;
+                gap: 32px;
+                min-width: 100%;
+            }
         }
     }
 
@@ -32,6 +39,13 @@ $position: center center;
             align-items: flex-start;
             gap: 116px;
             width: 100%;
+            
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 140px 12px;
+                gap: 88px;
+                flex-direction: column;
+            }
 
             .contacts__contactFormText {
                 display: flex;
@@ -41,6 +55,11 @@ $position: center center;
                 
                 .contacts__contactFormDesc {
                     @include m.text1();
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        @include m.text2();
+                    }
                 }
             }
 
@@ -51,12 +70,22 @@ $position: center center;
                 align-items: flex-start;
                 gap: 16px;
 
+                @media only screen
+                and (max-device-width: 1190px) {
+                    width: 100%;
+                }
+
                 .contacts__contactFieldGroup {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 8px;
                     align-self: stretch;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        width: 100%;
+                    }
 
                     .contacts__contactFieldName {
                         @include m.text3();
@@ -113,6 +142,11 @@ $position: center center;
                     display: flex;
                     justify-content: space-between;
 
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        margin-top: 32px;
+                    }
+
                     h3 { color: c.$white }
 
                     button {
@@ -147,13 +181,25 @@ $position: center center;
             flex-direction: column;
             gap: 64px;
 
-            .contacts__learnMoreText {
-                @include m.text1();
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 140px 12px;
+                height: auto;
+                gap: 40px;
+            }
 
+            .contacts__learnMoreText {
                 color: c.$accentBlue;
 
                 p {
+                    @include m.text1();
                     padding-left: 46.5vw;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        padding-left: 0;
+                        @include m.text2();
+                    }
                 }
             }
 
@@ -161,6 +207,11 @@ $position: center center;
                 display: flex;
                 gap: 12px;
                 width: 100%;
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    flex-direction: column;
+                }
 
                 .contacts__learnMoreCard {
                     background-color: c.$white;
@@ -171,6 +222,15 @@ $position: center center;
                     padding: 48px 24px;
                     width: 50%;
 
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        height: 360px;
+                        padding: 32px 16px;
+                        gap: 0;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+
                     .contacts__learnMoreName {
                         @include m.text3();
                         color: c.$lightPurple;
@@ -178,9 +238,40 @@ $position: center center;
 
                     .contacts__learnMoreValue {
                         color: c.$accentBlue;
+
+                        @media only screen
+                        and (max-device-width: 360px) {
+                            font-size: 8vw;
+                        }
+                    }
+                }
+
+                & > :nth-child(1) {
+                    .contacts__learnMoreValue {
+                        & > :nth-child(1) {
+                            @media only screen
+                            and (max-device-width: 1190px) {
+                                display: none;
+                            }
+                        }
+
+                        & > :nth-child(2) {
+                            display: none;
+                            @media only screen
+                            and (max-device-width: 1190px) {
+                                display: block;
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+.contacts__contactFormForm {
+    @media only screen
+    and (max-device-width: 1190px) {
+        width: 100%;
     }
 }

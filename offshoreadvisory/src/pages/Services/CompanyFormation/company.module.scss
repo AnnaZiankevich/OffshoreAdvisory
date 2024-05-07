@@ -10,6 +10,11 @@ $position: center center;
         display: flex;
         justify-content: flex-end;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            justify-content: flex-start;
+        }
+
         .company__whyUsContent {
             display: flex;
             flex-direction: column;
@@ -18,8 +23,21 @@ $position: center center;
             padding: 160px 63px 160px 612px;
             width: 80%;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 140px 12px;
+                gap: 32px;
+                width: 100%;
+            }
+
             .company__whyUsText {
                 @include m.text1();
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    @include m.text2();
+                    width: 80%;
+                }
             }
         }
     }

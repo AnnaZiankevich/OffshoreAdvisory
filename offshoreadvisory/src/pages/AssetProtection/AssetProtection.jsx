@@ -93,6 +93,7 @@ const AssetProtection = () => {
                                 offshore solutions to mitigate risk and optimize security. Our comprehensive services encompass:
                             </div>
                         </div>
+                        <div className={style.asset__approachTextMobile}>Who We Are</div>
                         <div className={style.asset__approachInfo} 
                              style={{ overflowY: "auto", cursor: "pointer" }} 
                              ref={sliderRef}

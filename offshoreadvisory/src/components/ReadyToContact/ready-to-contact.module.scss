@@ -32,6 +32,11 @@
         gap: 64px;
         flex-shrink: 0;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            padding: 64px 11px 398px 12px;
+        }
+
         .readyToContact__body {
             display: flex;
             flex-direction: column;
@@ -40,13 +45,19 @@
             color: c.$accentBlue;
             width: 550px;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                width: 90%;
+                gap: 24px;
+            }
+
             span {
                 @include m.text2();
                 width: 90%;
             }
 
             h3 {
-                width: 100%;
+                width: 90%;
             }
         }
     }

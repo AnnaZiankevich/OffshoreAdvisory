@@ -15,6 +15,13 @@ $position: center center;
             padding: 350px 359px 96px 12px;
             color: c.$lightBlue;
             max-width: 80%;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 204px 12px 48px 12px;  
+                max-width: 90%;
+                gap: 32px;
+            }
         }
     }
 
@@ -31,6 +38,12 @@ $position: center center;
             gap: 40px;
             padding: 160px 584px 160px 12px;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 140px 12px;  
+                gap: 32px;
+            }
+
             .asset__whyMattersText {
                 @include m.text3();
                 color: c.$lightPurple;
@@ -39,6 +52,11 @@ $position: center center;
             h3 {
                 color: c.$lightBlue;
                 max-width: 75%;
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    min-width: 90%;
+                }
             }
         }
     }
@@ -52,19 +70,52 @@ $position: center center;
             flex-direction: column;
             gap: 80px;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                gap: 48px;
+                padding: 0;
+                padding: 140px 12px; 
+            }
+
             .asset__approachText {
                 display: flex;
                 margin-left: 372px;
                 flex-direction: column;
                 gap: 48px;
 
+                @media only screen
+                and (max-device-width: 1190px) {
+                    margin-left: 0;
+                    display: none;
+                }
+
                 h1 {
                     color: c.$white;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        font-size: 40px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 40px; /* 100% */
+                        letter-spacing: -1.6px;
+                    }
                 }
 
                 .asset__approachDesc {
                     color: c.$lightPurple;
                     width: 55%;
+                }
+            }
+
+            .asset__approachTextMobile {
+                display: none;
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    display: flex;
+                    @include m.text1();
+                    color: c.$white;
                 }
             }
 
@@ -78,8 +129,19 @@ $position: center center;
                     align-items: flex-start;
                     gap: 12px;
 
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        flex-direction: column;
+                        width: 100%!important;
+                    }
+
                     & > :nth-child(1) {
                         margin-left: 372px;
+
+                        @media only screen
+                        and (max-device-width: 1190px) {
+                            margin-left: 0px; 
+                        }
                     }
 
                     & > :nth-child(4) {
@@ -99,9 +161,32 @@ $position: center center;
                         border-radius: 8px;
                         cursor: pointer;
                         color: c.$white;
+
+                        @media only screen
+                        and (max-device-width: 1190px) {
+                            padding: 32px 18px 32px 16px;
+                            width: 100%;
+                            height: 457px;
+                        }
+
+                        h3 {
+                            @media only screen
+                            and (max-device-width: 1190px) {
+                                font-size: 40px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 40px; /* 100% */
+                                letter-spacing: -1.6px;
+                            }
+                        }
                     
                         p {
                             @include m.text3();
+
+                            @media only screen
+                            and (max-device-width: 1190px) {
+                                @include m.text1();
+                            }
                         }
                     }
                 }
@@ -119,6 +204,23 @@ $position: center center;
             padding: 0px 189px 160px 372px;
             color: c.$white;
             width: 80%;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 0px 12px 140px 12px; 
+                width: 90%;
+            }
+
+            h1 {
+                @media only screen
+                and (max-device-width: 1190px) {
+                    font-size: 40px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 40px; /* 100% */
+                    letter-spacing: -1.6px;
+                }
+            }
         }
     }
 }

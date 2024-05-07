@@ -15,8 +15,19 @@ $position: bottom center;
         background-color: c.$ultraLightGrey;
         color: c.$lightBlue;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            padding: 360px 30px 48px 12px;
+            width: 100%;
+        }
+
         .about__description {
             max-width: 80%;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                max-width: 100%;
+            }
         }
     }
 
@@ -32,17 +43,32 @@ $position: bottom center;
         padding: 160px 666px 104px 12px;
 
         background-color: c.$ultraLightGrey;
+
+        @media only screen
+        and (max-device-width: 1190px) {
+            padding: 140px 12px;
+        }
         
         .about__missionSecondText {
             @include m.text3;
 
             color: c.$lightPurple;
             max-width: 55%;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                max-width: 85%;
+            }
         }
 
         .about__missionMainText {
             color: c.$lightBlue;
             max-width: 65%;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                min-width: 90%;
+            }
         }
     }
 
@@ -56,6 +82,12 @@ $position: bottom center;
             flex-direction: column;
             gap: 40px;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 140px 12px;
+                gap: 48px;
+            }
+
             .about__whoTitle {
                 @include m.text1;
                 color: c.$white;
@@ -68,6 +100,12 @@ $position: bottom center;
                 gap: 12px;
                 height: 600px;
 
+                @media only screen
+                and (max-device-width: 1190px) {
+                    height: auto;
+                    flex-direction: column;
+                }
+
                 .about__whoItem {
                     height: 100%;
                     border-radius: 8px;
@@ -75,14 +113,43 @@ $position: bottom center;
                     color: c.$white;
                     width: 429px;
 
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        width: 100%;
+                        height: 457px;
+                    }
+
                     .about__WhoItemContent {
                         height: 100%;
-                        // width: 25vw;
-                        // width: 360px;
                         padding: 48px 37px 48px 32px;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+
+                        @media only screen
+                        and (max-device-width: 1190px) {
+                            padding: 32px 18px 32px 16px;
+                        }
+
+                        h3 {
+                            @media only screen
+                            and (max-device-width: 1190px) {
+                                font-size: 40px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 40px; /* 100% */
+                                letter-spacing: -1.6px;
+                            }
+                        }
+
+                        .about__WhoItemInfo {
+                            @include m.text3();
+
+                            @media only screen
+                            and (max-device-width: 1190px) {
+                                @include m.text1();
+                            }
+                        }
                     }
                 }
             }
@@ -99,6 +166,12 @@ $position: bottom center;
             flex-direction: column;
             gap: 88px;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 0px 12px 140px 12px;
+                gap: 64px;
+            }
+
             h1 {
                 color: c.$white;
             }
@@ -114,6 +187,11 @@ $position: bottom center;
                     gap: 48px;
                     width: 644px;
 
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        width: 100%;
+                    }
+
                     .about__apartItem {
                         display: flex;
                         padding-top: 32px;
@@ -128,8 +206,14 @@ $position: bottom center;
                         }
 
                         .about__apartItemInfo {
-                            @include m.text3;
+                            @include m.text3();
                             color: c.$lightPurple;
+
+                            @media only screen
+                            and (max-device-width: 1190px) {
+                                @include m.text2();
+                                width: 80%;
+                            }
                         }
                     }
                 }

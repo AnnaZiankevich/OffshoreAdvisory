@@ -12,9 +12,23 @@ $position: center center;
             padding: 536px 696px 96px 12px;
             width: 90%;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 372px 22px 48px 12px;
+            }
+
             h2 {
                 color: c.$white;
                 span { color: c.$lightBlue }
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    font-size: 56px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 56px; /* 100% */
+                    letter-spacing: -2.24px;
+                }
             }
         }
     }
@@ -31,6 +45,12 @@ $position: center center;
                 gap: 12px;
                 border-bottom: 1.5px solid c.$lightGrey;
 
+                @media only screen
+                and (max-device-width: 1190px) {
+                    padding: 140px 12px 104px 12px;
+                    flex-direction: column;
+                }
+
                 .gaming__infoCard {
                     width: 50%;
                     background-color: c.$white;
@@ -40,6 +60,13 @@ $position: center center;
                     height: 462px;
                     padding: 48px 24px;
                     justify-content: space-between;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        width: 100%;
+                        height: 521px;
+                        padding: 32px 18px 32px 16px;
+                    }
 
                     .gaming__infoCardTitle {
                         @include m.text3();
@@ -65,6 +92,12 @@ $position: center center;
             gap: 64px;
             width: 100%;
 
+            @media only screen
+            and (max-device-width: 1190px) {
+                padding: 104px 12px 140px 12px;
+                flex-direction: column;
+            }
+
             .gaming__restrictedTitle {
                 color: c.$lightBlue;
                 span { color: c.$lightPurple }
@@ -85,6 +118,11 @@ $position: center center;
 
     .gaming__whyUs {
         background-color: c.$ultraLightGrey;
+
+        @media only screen
+        and (max-device-width: 1190px) {
+            display: none;
+        }
 
         .gaming__whyUsContent {
             display: flex;
@@ -140,6 +178,15 @@ $position: center center;
     
     .gaming__picture {
         @include m.picture($url, $position);
+    }
+
+    .gaming__advantages {
+        & *> h2 {
+            @media only screen
+            and (max-device-width: 383px) {
+                font-size: 14vw;
+            }
+        }
     }
 }
 

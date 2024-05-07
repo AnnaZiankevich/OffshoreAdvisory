@@ -10,6 +10,23 @@
     background-color: c.$ultraDarkBlue;
     padding: 160px 64px;
 
+    @media only screen
+    and (max-device-width: 1190px) {
+        padding: 140px 12px;
+        gap: 64px;
+    }
+
+    h2 {
+        @media only screen
+        and (max-device-width: 1190px) {
+            font-size: 56px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 56px; /* 100% */
+            letter-spacing: -2.24px;
+        }
+    }
+
     .list__title {
         color: c.$white;
         width: 60%;
@@ -27,12 +44,23 @@
         justify-content: flex-end;
         align-items: flex-end;
 
+        @media only screen
+        and (max-device-width: 1190px) {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
         .list__info {
             display: flex;
             width: 644px;
             flex-direction: column;
             align-items: flex-start;
             gap: 48px;
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                width: 100%;
+            }
 
             .list__item {
                 display: flex;
@@ -52,11 +80,22 @@
 
                     color: c.$lightPurple;
                     width: 481px;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        @include m.text2();
+                        width: 80%;
+                    }
                 }
             }
 
             & > :nth-child(1) {
                 border-top: none;
+
+                @media only screen
+                and (max-device-width: 1190px) {
+                    border-top: 1px solid c.$darkBlue;
+                }
             }
         }
     }

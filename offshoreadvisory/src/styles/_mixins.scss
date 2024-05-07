@@ -103,5 +103,10 @@ $letter-spacing: -4%;
     background-size: cover;
     background-position: $position;
     filter: grayscale(1);
+
+    @media only screen
+    and (max-device-width: 1190px) {
+        height: 600px;
+    } 
 }
 

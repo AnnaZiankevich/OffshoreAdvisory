@@ -1,7 +1,7 @@
 @use '../../../styles/colors' as c;
 @use '../../../styles/mixins' as m;
 
-$url: '../../../assets/img/picture-company.jpg';
+$url: '/assets/img/picture-company.jpg';
 $position: center center;
 
 .company {
@@ -9,6 +9,7 @@ $position: center center;
         background-color: c.$ultraLightGrey;
         display: flex;
         justify-content: flex-end;
+        width: 100%;
 
         @media only screen
         and (max-device-width: 1190px) {
@@ -21,22 +22,30 @@ $position: center center;
             gap: 64px;
             color: c.$lightBlue;
             padding: 160px 63px 160px 612px;
-            width: 80%;
+            width: 100%;
+            // max-width: 765px;
 
             @media only screen
             and (max-device-width: 1190px) {
-                padding: 140px 12px;
+                padding: 100px 12px;
                 gap: 32px;
                 width: 100%;
+                max-width: 100%;
             }
 
             .company__whyUsText {
                 @include m.text1();
+                display: flex;
+                flex-direction: column;
+                gap: 64px;
+                padding-left: 28.5px;
 
                 @media only screen
                 and (max-device-width: 1190px) {
                     @include m.text2();
-                    width: 80%;
+                    width: 100%;
+                    gap: 32px;
+                    padding-left: 28.5px;
                 }
             }
         }
@@ -44,6 +53,66 @@ $position: center center;
 
     .company__picture {
         @include m.picture($url, $position);
+    }
+
+    .company__juri {
+        display: inline-flex;
+        padding: 140px 319px 140px 108px;
+        flex-direction: column;
+        gap: 60px;
+        width: 100%;
+        background: c.$ultraDarkBlue;
+
+        @media only screen
+        and (max-device-width: 1190px) {
+            padding: 100px 12px;
+        }
+
+        .company__juri_content {
+            display: flex;
+            flex-direction: column;
+
+            .company__juri_item {
+                display: flex;
+                padding-top: 32px;
+                padding-bottom: 48px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+                align-self: stretch;
+                border-bottom: 1px solid c.$darkBlue;
+
+                .company__juri_title {
+                    color: c.$white;
+                }
+
+                .company__juri_text {
+                    @include m.text1();
+                    color: c.$lightPurple;
+
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        @include m.text2();
+                    }
+                }
+            }
+        }
+
+        .company__juri_bottom {
+            @include m.text1();
+            color: c.$lightPurple;
+            letter-spacing: -0.96px;
+
+            a {
+                color: c.$lightBlue;
+            }
+
+            @media only screen
+            and (max-device-width: 1190px) {
+                @include m.text2();
+                letter-spacing: -0.72px;
+            }
+        }
     }
 
     .company__contact *> h3 {

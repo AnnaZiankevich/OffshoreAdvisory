@@ -6,6 +6,10 @@ import logo from '../../assets/img/footer-logo.svg'
 import phone from '../../assets/img/phone.svg'
 import mail from '../../assets/img/mail.svg'
 import download from '../../assets/img/download.svg'
+import telegram from '../../assets/img/telegram.svg'
+import whatsapp from '../../assets/img/whatsapp.svg'
+import TermsOfUse from '../../assets/documents/Terms of Use.pdf'
+import PrivacyPolicy from '../../assets/documents/Privacy Policy.pdf'
 
 const Footer = () => {
 
@@ -18,21 +22,25 @@ const Footer = () => {
                     </Link>
                     <div className={style.footer__content}>
                         <div className={style.footer__item}>
-                            <a href="tel:+447700306856" className={style.footer__icon}>
-                                <img src={phone} alt="" />
-                                <p>+447700306856</p>
+                            <a href="" className={style.footer__icon}>
+                                <div className={style.footer__icons}>
+                                    <a href="tel:+355 69 337 7716" target='_blank' without rel="noreferrer"><img src={phone} alt="" /></a>
+                                    <a href='tg://resolve?domain=355693377716' target='_blank' without rel="noreferrer"><img src={telegram} alt="" /></a>
+                                    <a href='https://api.whatsapp.com/send?phone=355693377716' target='_blank' without rel="noreferrer"><img src={whatsapp} alt="" /></a>
+                                </div>
+                                <p><a href="tel:+355 69 337 7716">+355 69 337 7716</a></p>
                             </a>
-                            <a href="mailto:info@offshoreadvisory.pro" className={style.footer__icon}>
+                            <a href="mailto:info@offshoreadvisory.pro" target='_blank' without rel="noreferrer" className={style.footer__icon}>
                                 <img src={mail} alt="" />
                                 <p>info@offshoreadvisory.pro</p>
                             </a>
                         </div>
                         <div className={style.footer__item}>
-                            <a href="" className={style.footer__icon}> {/*download=''*/}
+                            <a href={PrivacyPolicy} className={style.footer__icon} target='_blank' without rel="noreferrer"> 
                                 <img src={download} alt="" />
                                 <p>Privacy Policy</p>
                             </a>
-                            <a href="" className={style.footer__icon}> {/*download=''*/}
+                            <a href={TermsOfUse} className={style.footer__icon} target='_blank' without rel="noreferrer"> 
                                 <img src={download} alt="" />
                                 <p>Terms of Use</p>
                             </a>
@@ -49,11 +57,15 @@ const Footer = () => {
                 <div className={style.footer__mobile}>
                     <div className={style.footer__mobileContent}>
                         <div className={style.footer__item}>
-                            <a href="tel:+447700306856" className={style.footer__icon}>
-                                <img src={phone} alt="" />
-                                <p>+447700306856</p>
+                        <a href="" className={style.footer__icon}>
+                                <div className={style.footer__icons}>
+                                    <a href="tel:+355 69 337 7716" target='_blank' without rel="noreferrer"><img src={phone} alt="" /></a>
+                                    <a href='tg://resolve?domain=355693377716' target='_blank' without rel="noreferrer"><img src={telegram} alt="" /></a>
+                                    <a href='https://api.whatsapp.com/send?phone=355693377716' target='_blank' without rel="noreferrer"><img src={whatsapp} alt="" /></a>
+                                </div>
+                                <p><a href="tel:+355 69 337 7716">+355 69 337 7716</a></p>
                             </a>
-                            <a href="mailto:info@offshoreadvisory.pro" className={style.footer__icon}>
+                            <a href="mailto:info@offshoreadvisory.pro" target='_blank' without rel="noreferrer" className={style.footer__icon}>
                                 <img src={mail} alt="" />
                                 <p>info@offshoreadvisory.pro</p>
                             </a>
@@ -62,11 +74,11 @@ const Footer = () => {
                             <Button color='white' />
                         </div>
                         <div className={style.footer__item}>
-                            <a href="" className={style.footer__icon}> {/*download=''*/}
+                            <a href={PrivacyPolicy} className={style.footer__icon} target='_blank'> 
                                 <img src={download} alt="" />
                                 <p>Privacy Policy</p>
                             </a>
-                            <a href="" className={style.footer__icon}> {/*download=''*/}
+                            <a href={TermsOfUse} className={style.footer__icon} target='_blank'> 
                                 <img src={download} alt="" />
                                 <p>Terms of Use</p>
                             </a>

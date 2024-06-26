@@ -3,11 +3,8 @@ import style from './home.module.scss'
 import { Link } from "react-router-dom"
 import arrow from '../../assets/img/arrow.svg'
 import { CONTACT_US } from '../../Constants/RoutesConstants'
-import { startPageWhy, startPageServices, startPageHow } from '../../Constants/StaticData'
+import { startPageWhy, startPageServices } from '../../Constants/StaticData'
 import Button from '../../components/UI/ButtonContact/ButtonContact'
-import ScrollMagic from 'scrollmagic';
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Home = () => {
 
@@ -68,8 +65,6 @@ const Home = () => {
           if (servicesElement && workElement) {
             const servicesRect = servicesElement.getBoundingClientRect();
             const workRect = workElement.getBoundingClientRect();
-
-            console.log(workRect.top)
     
             const isServicesTopVisible = servicesRect.top <= 0;
             const isServicesBottomVisible = servicesRect.bottom >= window.innerHeight;
@@ -92,9 +87,21 @@ const Home = () => {
             <div className={style.home}>
                 <div className={style.home__start}>
                     <div className={style.home__startContent}>
-                        <h1 className={style.home__mainText}>
-                            Unlock Opportunities in Offshore Zone <br/>Jurisdictions
-                        </h1>
+                        {
+                        !mobile ?
+                            <h2 className={style.home__mainText}>
+                                Offshore Advisory is a premier provider of corporate, trust, fiduciary, and fund services, 
+                                offering specialized solutions for a global clientele. We serve international corporations, 
+                                institutional investors, high-net-worth individuals, families, and intermediaries. 
+                                Our services span over 80 countries, ensuring compliance and efficiency.
+                            </h2> :
+                            <h3 className={style.home__mainText}>
+                                Offshore Advisory is a premier provider of corporate, trust, fiduciary, and fund services, 
+                                offering specialized solutions for a global clientele. We serve international corporations, 
+                                institutional investors, high-net-worth individuals, families, and intermediaries. 
+                                Our services span over 80 countries, ensuring compliance and efficiency.
+                            </h3>
+                        }
                         <div className={style.home__startGetStarted}>
                             <Link to={CONTACT_US}>
                                 <p>Get started today!</p>
@@ -106,7 +113,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={style.home__whyUs}>
-                    <h2 className={style.home__whyUsTitle}>Why People Choose Us and Offshore Jurisdictions?</h2>
+                    <h2 className={style.home__whyUsTitle}>Core Services</h2>
                     {
                         startPageWhy.map(item => { 
                           return (
@@ -143,20 +150,23 @@ const Home = () => {
                 </div>
                 <div className={style.home__work} ref={mobile ? null : workRef}>
                     <div className={style.home__workTitle}>
-                        <h3>Discover</h3>
-                        <h3>How We Work</h3>
+                    {mobile ?
+                            <h2>Client Focus</h2> :
+                            <h1>Client Focus</h1>}
                     </div>
                     <div className={style.home__workContent}>
                         {
-                            startPageHow.map(item => {
-                                return (
-                                    <div key={item.id} className={style.home__workItem}>
-                                        {mobile ?
-                                        <h2>{item.name}</h2> :
-                                        <h1>{item.name}</h1>}
-                                        <p>{item.value}</p>
-                                    </div>
-                            )})
+                            mobile ?
+                            <div className={style.home__workText}>At Offshore Advisory, we prioritize personalized, efficient services tailored to meet 
+                            our clients' specific needs. Our clients include international law firms, accounting 
+                            firms, private and public corporations, traders, expatriates, entrepreneurs, high-net-worth 
+                            individuals, international banks, private wealth advisors, hedge fund managers, and asset 
+                            managers.</div> :
+                            <h4>At Offshore Advisory, we prioritize personalized, efficient services tailored to meet 
+                            our clients' specific needs. Our clients include international law firms, accounting 
+                            firms, private and public corporations, traders, expatriates, entrepreneurs, high-net-worth 
+                            individuals, international banks, private wealth advisors, hedge fund managers, and asset 
+                            managers.</h4>
                         }
                     </div>
                 </div>

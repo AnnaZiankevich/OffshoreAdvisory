@@ -7,6 +7,10 @@ import img from '../../../assets/img/picture-contact.jpeg'
 
 const BankingLicense = () => {
 
+    const styles = {
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${img}) lightgray 50% / cover no-repeat`,
+    }
+
     const bankJuri = [
         {
             title: "Western Sahara",
@@ -85,7 +89,7 @@ const BankingLicense = () => {
                     <ReadyToContact 
                         title='Ready to embark on your offshore journey?'
                         subtitle="Contact Offshore Advisory to schedule a consultation with one of our experts. We'll assess your requirements, recommend suitable jurisdictions, and guide you through every step of the licensing process, helping you establish a successful offshore bank with confidence."
-                        img={img}
+                        styles={styles}
                     />
                 </div>
             </div>

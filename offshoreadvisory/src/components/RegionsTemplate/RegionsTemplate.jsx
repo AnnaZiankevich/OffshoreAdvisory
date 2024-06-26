@@ -92,6 +92,10 @@ const RegionsTemplate = ({ info }) => {
         return value % 2 === 0;
     };
 
+    const styles = {
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${getStarted}) lightgray 50% / cover no-repeat`,
+    }
+
     return (
         <div className={style.region}>
             <div className={style.region__start}
@@ -156,7 +160,7 @@ const RegionsTemplate = ({ info }) => {
                   </div>
                 </div>
             </div>
-            <ReadyToContact title={readyToContactInfo[0]} subtitle={readyToContactInfo[1]} img={getStarted} />
+            <ReadyToContact title={readyToContactInfo[0]} subtitle={readyToContactInfo[1]} styles={styles} />
         </div>
     );
 };

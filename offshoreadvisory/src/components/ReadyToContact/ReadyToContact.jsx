@@ -3,14 +3,12 @@ import style from './ready-to-contact.module.scss'
 import Button from '../UI/ButtonContact/ButtonContact';
 // import getStarted from '../../assets/img/picture-started.jpeg'
 
-const ReadyToContact = ({ title, subtitle, img }) => {
+const ReadyToContact = ({ title, subtitle, styles }) => {
 
     return (
         <div className={style.readyToContact__block}>
             <div className={style.readyToContact__picture}
-                 style={{
-                    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${img}) lightgray 50% / cover no-repeat`,
-                  }}
+                style={styles}
             >
             </div>
             <div className={style.readyToContact__content}>

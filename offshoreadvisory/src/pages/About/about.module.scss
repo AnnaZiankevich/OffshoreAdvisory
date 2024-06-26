@@ -10,7 +10,7 @@ $position: bottom center;
         display: inline-flex;
         flex-direction: column;
         gap: 40px;
-        padding: 446px 389px 96px 12px;
+        padding: 446px 132px 54px 12px;
 
         background-color: c.$ultraLightGrey;
         color: c.$lightBlue;
@@ -22,8 +22,6 @@ $position: bottom center;
         }
 
         .about__description {
-            max-width: 80%;
-
             @media only screen
             and (max-device-width: 1190px) {
                 max-width: 100%;
@@ -40,30 +38,18 @@ $position: bottom center;
         display: inline-flex;
         flex-direction: column;
         gap: 40px;
-        padding: 160px 666px 104px 12px;
+        padding: 150px 132px 150px 12px;
 
         background-color: c.$ultraLightGrey;
 
         @media only screen
         and (max-device-width: 1190px) {
-            padding: 140px 12px;
-        }
-        
-        .about__missionSecondText {
-            @include m.text3;
-
-            color: c.$lightPurple;
-            max-width: 55%;
-
-            @media only screen
-            and (max-device-width: 1190px) {
-                max-width: 85%;
-            }
+            padding: 60px 47px 60px 12px;
         }
 
         .about__missionMainText {
             color: c.$lightBlue;
-            max-width: 65%;
+            max-width: 100%;
 
             @media only screen
             and (max-device-width: 1190px) {
@@ -161,19 +147,33 @@ $position: bottom center;
         background-color: c.$ultraDarkBlue;
 
         .about__apartContent {
-            padding: 0px 64px 160px 64px;
+            padding: 0px 64px 150px 108px;
             display: flex;
             flex-direction: column;
-            gap: 88px;
+            gap: 100px;
 
             @media only screen
             and (max-device-width: 1190px) {
-                padding: 0px 12px 140px 12px;
+                padding: 140px 12px;
                 gap: 64px;
             }
 
-            h1 {
+            .about__apartTitle {
                 color: c.$white;
+                display: flex;
+                flex-direction: column;
+                gap: 38px;
+
+                h3 {
+                    @media only screen
+                    and (max-device-width: 1190px) {
+                        font-size: 30px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 30px; 
+                        letter-spacing: -1.2px;
+                    }
+                }
             }
 
             .about__apartInfo {
@@ -185,7 +185,7 @@ $position: bottom center;
                     display: flex;
                     flex-direction: column;
                     gap: 48px;
-                    width: 644px;
+                    max-width: 644px;
 
                     @media only screen
                     and (max-device-width: 1190px) {
@@ -206,7 +206,7 @@ $position: bottom center;
                         }
 
                         .about__apartItemInfo {
-                            @include m.text3();
+                            @include m.text1();
                             color: c.$lightPurple;
 
                             @media only screen

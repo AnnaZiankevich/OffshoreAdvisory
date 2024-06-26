@@ -61,3 +61,12 @@
         }
     }
 }
+
+.companyStartBlock {
+    padding: 262px 95px 140px 12px!important;
+
+    @media only screen
+    and (max-device-width: 1190px) {
+        padding: 236px 12px 20px 12px!important;
+    }
+}

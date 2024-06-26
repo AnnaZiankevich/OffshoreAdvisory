@@ -1,18 +1,53 @@
 export const startPageWhy = [
     {
         id: 1,
-        name: "Strategic Locations",
-        value: "Benefit from strategic geographical locations that offer tax advantages and legal flexibility."
+        name: "1. Corporate Services:",
+        value: <div>
+                - Company Formation and Management: Jurisdictional structuring, onshore and 
+                offshore solutions, professional director services, comprehensive management 
+                and administration.<br/>
+                - Securitisation and Special Purpose Vehicles: Management and 
+                administration of securitisation vehicles, listing services on the 
+                Seychelles Securities Exchange.<br/>
+                - Offshore Incorporations: Services in premier jurisdictions, 
+                with post-incorporation support.<br/>
+                - Escrow Services: Support for mergers, acquisitions, and 
+                other financial transactions.
+                </div>
     },
     {
         id: 2,
-        name: "Asset Protection",
-        value: "Safeguard your assets with the robust legal frameworks provided by these jurisdictions."
+        name: "2. Trust and Fiduciary Services:",
+        value: <div>
+                - Trusts and Foundations: Formation, management, and administration for 
+                tax and estate planning, pensions, and employee benefits plans.<br/>
+                - Family Office: Bespoke management of family assets, in collaboration 
+                with financial advisors.
+               </div>
     },
     {
         id: 3,
-        name: "International Business",
-        value: "Position your business for global success by tapping into thriving international markets."
+        name: "3. Fund Services:",
+        value: <div>
+                - Fund Formation: Structures for private equity, property, and 
+                hedge funds, guidance on regulatory and licensing requirements.<br/>
+                - Fund Administration: Back-office support, independent Net 
+                Asset Value calculation, accounting services.<br/>
+                - Transfer Agency: Handling subscriptions, redemptions, and 
+                maintaining investor registers.
+               </div>
+    },
+    {
+        id: 4,
+        name: "4. Advisory and Other Service:",
+        value: <div>
+                - Advisory: Structuring, foreign market entry, international 
+                investment solutions, and tax reduction.<br/>
+                - Nominees: Nominee shareholder services through a bare 
+                trust arrangement.<br/>
+                - Secretarial: Maintaining statutory documents, advising 
+                boards, drafting minutes, and preparing resolutions.
+               </div>
     },
 ]
 
@@ -31,24 +66,6 @@ export const startPageServices = [
         id: 'Regulatory Compliance',
         name: "Regulatory Compliance",
         value: "Ensure compliance with local regulations and global standards, guided by our experienced team."
-    },
-]
-
-export const startPageHow = [
-    {
-        id: 'Consultation',
-        name: "Consultation",
-        value: "Begin with a comprehensive consultation to understand your business needs."
-    },
-    {
-        id: 'Tailored Solutions',
-        name: "Tailored Solutions",
-        value: "Receive personalized solutions tailored to your industry and goals."
-    },
-    {
-        id: 'Efficient Processes',
-        name: "Efficient Processes",
-        value: "Our streamlined processes ensure a hassle-free experience in acquiring licenses."
     },
 ]
 

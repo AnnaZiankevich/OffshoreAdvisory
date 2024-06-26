@@ -7,6 +7,10 @@ import img from '../../../assets/img/picture-contact.jpeg'
 
 const GamingLicense = () => {
 
+    const styles = {
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${img}) lightgray 50% / cover no-repeat`,
+    }
+
     const advantages = [
         {
             title: "Company Incorporation Flexibility",
@@ -148,7 +152,7 @@ const GamingLicense = () => {
                     <ReadyToContact
                         title='Ready to embark on a journey of international business excellence?'
                         subtitle='Contact us to learn more about how Offshore Advisory can be your trusted partner in navigating offshore opportunities.'
-                        img={img}
+                        styles={styles}
                     />
                 </div>
             </div>

@@ -28,6 +28,12 @@
                 flex-direction: column;
                 gap: 16px;
 
+                .footer__icons {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
                 .footer__icon {
                     display: flex;
                     gap: 8px;
@@ -98,6 +104,12 @@
                 flex-direction: column;
                 gap: 16px;
                 color: c.$white;
+
+                .footer__icons {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
 
                 .footer__icon {
                     display: flex;

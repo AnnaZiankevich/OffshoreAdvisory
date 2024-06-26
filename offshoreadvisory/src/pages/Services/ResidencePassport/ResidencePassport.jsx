@@ -7,6 +7,10 @@ import img from '../../../assets/img/picture-contact.jpeg'
 
 const ResidencePassport = () => {
 
+    const styles = {
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${img}) lightgray 50% / cover no-repeat`,
+    }
+
     const countries = [
         {
             title: "Italy",
@@ -72,7 +76,7 @@ const ResidencePassport = () => {
                     <ReadyToContact
                         title='Ready to embark on your path to global residency and citizenship?'
                         subtitle="Contact Offshore Advisory to schedule a consultation with our seasoned advisors. Whether your destination is Italy, Spain, Cyprus, Dubai, or beyond, let us navigate the complexities for you, opening doors to new horizons and boundless opportunities."
-                        img={img}
+                        styles={styles}
                     />
                 </div>
             </div>

@@ -126,7 +126,7 @@ const Contacts = () => {
                             <div className={style.contacts__learnMoreCard}>
                                 <div className={style.contacts__learnMoreName}>Or contact us by calling us at:</div>
                                 <h3 className={style.contacts__learnMoreValue}>
-                                    <a href='tel:+447700306856'>+447700306856</a>
+                                    <a href='tel:+355 69 337 7716'>+355 69 337 7716</a>
                                 </h3>
                             </div>
                         </div>
